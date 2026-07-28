@@ -1,0 +1,47 @@
+.about__intro {
+  max-width: 62ch;
+  color: var(--color-text-muted);
+  font-size: clamp(1rem, 1vw + 0.6rem, 1.1rem);
+  margin-bottom: var(--space-6);
+}
+
+.about__timeline {
+  display: flex;
+  flex-direction: column;
+}
+
+.about__item {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: var(--space-4);
+  padding-block: var(--space-4);
+  border-top: 1px solid var(--color-border);
+}
+
+.about__item:first-child {
+  border-top: 1px solid var(--color-border);
+}
+
+.about__item-period {
+  font-size: var(--fs-small);
+  color: var(--color-text-faint);
+  font-variant-numeric: tabular-nums;
+  padding-top: 0.15rem;
+}
+
+.about__item-org {
+  font-size: var(--fs-h3);
+  margin-bottom: var(--space-1);
+}
+
+.about__item-role {
+  color: var(--color-text-muted);
+  font-size: var(--fs-small);
+}
+
+@media (max-width: 640px) {
+  .about__item {
+    grid-template-columns: 1fr;
+    gap: var(--space-1);
+  }
+}
