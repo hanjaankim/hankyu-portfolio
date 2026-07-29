@@ -42,6 +42,7 @@
   --content-padding: clamp(1.25rem, 4vw, 3rem);
   --radius-sm: 6px;
   --radius-md: 10px;
+  --header-height: 64px;
 
   --transition-fast: 150ms ease;
   --transition-base: 220ms ease;

@@ -1,13 +1,20 @@
 import { useId, useState } from "react";
 import ImagePlaceholder from "../ImagePlaceholder/ImagePlaceholder";
+import useReveal from "../../hooks/useReveal";
 import "./ProjectCard.css";
 
 function ProjectCard({ project }) {
   const [isOpen, setIsOpen] = useState(false);
   const panelId = useId();
+  const [ref, isVisible] = useReveal();
 
   return (
-    <li className={`project-card ${isOpen ? "project-card--open" : ""}`}>
+    <li
+      ref={ref}
+      className={`project-card reveal ${isVisible ? "reveal--visible" : ""} ${
+        isOpen ? "project-card--open" : ""
+      }`}
+    >
       <button
         type="button"
         className="project-card__header"

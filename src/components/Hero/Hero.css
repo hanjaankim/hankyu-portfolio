@@ -1,5 +1,5 @@
 .hero {
-  min-height: 92svh;
+  min-height: calc(100svh - var(--header-height));
   display: flex;
   align-items: center;
 }
@@ -76,6 +76,6 @@
 
 @media (max-width: 640px) {
   .hero {
-    min-height: 84svh;
+    min-height: calc(88svh - var(--header-height));
   }
 }

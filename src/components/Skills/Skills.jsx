@@ -1,14 +1,21 @@
 import { designTools, planningSkills } from "../../data/skills";
+import useReveal from "../../hooks/useReveal";
 import "./Skills.css";
 
 function Skills() {
+  const [highlightRef, highlightVisible] = useReveal();
+  const [gridRef, gridVisible] = useReveal();
+
   return (
     <section id="skills" className="section">
       <div className="container">
         <p className="section-eyebrow">Skills</p>
         <h2 className="section-title">역량</h2>
 
-        <div className="skills__highlight">
+        <div
+          ref={highlightRef}
+          className={`skills__highlight reveal ${highlightVisible ? "reveal--visible" : ""}`}
+        >
           <p className="skills__highlight-eyebrow">AI 활용 개발</p>
           <h3 className="skills__highlight-title">
             Claude Code(CLI)로 기획자가 직접 개발하고 배포합니다
@@ -20,7 +27,10 @@ function Skills() {
           </p>
         </div>
 
-        <div className="skills__grid">
+        <div
+          ref={gridRef}
+          className={`skills__grid reveal ${gridVisible ? "reveal--visible" : ""}`}
+        >
           <div className="skills__group">
             <h3 className="skills__group-title">디자인 툴</h3>
             <ul className="skills__tags">

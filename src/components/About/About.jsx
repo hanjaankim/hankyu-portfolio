@@ -1,27 +1,43 @@
 import experience from "../../data/experience";
+import useReveal from "../../hooks/useReveal";
 import "./About.css";
+
+function AboutItem({ item }) {
+  const [ref, isVisible] = useReveal();
+
+  return (
+    <li
+      ref={ref}
+      className={`about__item reveal ${isVisible ? "reveal--visible" : ""}`}
+    >
+      <div className="about__item-period">{item.period}</div>
+      <div className="about__item-body">
+        <h3 className="about__item-org">{item.org}</h3>
+        <p className="about__item-desc">{item.description}</p>
+        <ul className="about__item-bullets">
+          {item.bullets.map((bullet) => (
+            <li key={bullet}>{bullet}</li>
+          ))}
+        </ul>
+      </div>
+    </li>
+  );
+}
 
 function About() {
   return (
     <section id="about" className="section">
       <div className="container">
         <p className="section-eyebrow">About</p>
-        <h2 className="section-title">기획하고, 직접 만듭니다</h2>
+        <h2 className="section-title">경력</h2>
         <p className="about__intro">
-          서비스 기획자로 커리어를 시작해 최근에는 AI 도구를 활용해 프론트엔드 개발과
-          배포까지 직접 수행하고 있습니다. 아이디어를 사업/서비스 기획으로 구체화하고,
-          외주 개발사 운영과 QA 체계 구축을 거쳐 실제 론칭까지 이끄는 과정을 반복해왔습니다.
+          다양한 산업 도메인에서 서비스기획 업무를 수행해왔고, 최근에는 AI 도구를 활용해
+          프론트엔드 개발과 배포까지 직접 수행하고 있습니다.
         </p>
 
         <ul className="about__timeline">
           {experience.map((item) => (
-            <li className="about__item" key={`${item.org}-${item.role}`}>
-              <div className="about__item-period">{item.period}</div>
-              <div className="about__item-body">
-                <h3 className="about__item-org">{item.org}</h3>
-                <p className="about__item-role">{item.role}</p>
-              </div>
-            </li>
+            <AboutItem item={item} key={item.org} />
           ))}
         </ul>
       </div>

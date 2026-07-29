@@ -1,7 +1,10 @@
 import contact from "../../data/contact";
+import useReveal from "../../hooks/useReveal";
 import "./Contact.css";
 
 function Contact() {
+  const [ref, isVisible] = useReveal();
+
   return (
     <section id="contact" className="section">
       <div className="container">
@@ -11,7 +14,7 @@ function Contact() {
           새로운 프로젝트, 협업 제안 모두 환영합니다. 아래 채널로 편하게 연락해주세요.
         </p>
 
-        <ul className="contact__list">
+        <ul ref={ref} className={`contact__list reveal ${isVisible ? "reveal--visible" : ""}`}>
           <li className="contact__item">
             <span className="contact__label">Email</span>
             <a className="contact__value" href={`mailto:${contact.email}`}>
