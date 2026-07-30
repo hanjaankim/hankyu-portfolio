@@ -21,7 +21,10 @@
 
 .hero__name {
   font-size: var(--fs-hero);
-  letter-spacing: -0.02em;
+  /* Hangul glyphs are squarer than Latin — anything past ~-0.03em starts
+     visually overlapping jamo blocks, so we stop short of the -0.05em
+     the reference display type uses. */
+  letter-spacing: -0.03em;
   display: flex;
   align-items: baseline;
   gap: var(--space-3);
@@ -51,17 +54,17 @@
   display: inline-flex;
   align-items: center;
   padding: 0.7rem 1.4rem;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-pill);
   border: 1px solid var(--color-border);
   text-decoration: none;
   font-size: var(--fs-small);
   font-weight: 600;
   color: var(--color-text);
-  transition: background var(--transition-fast), border-color var(--transition-fast);
+  transition: border-color var(--transition-fast), opacity var(--transition-fast);
 }
 
 .hero__link:hover {
-  border-color: var(--color-text-muted);
+  border-color: var(--color-accent-strong);
 }
 
 .hero__link--primary {
@@ -72,6 +75,7 @@
 
 .hero__link--primary:hover {
   opacity: 0.88;
+  border-color: var(--color-accent);
 }
 
 @media (max-width: 640px) {

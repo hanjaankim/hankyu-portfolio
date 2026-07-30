@@ -38,6 +38,7 @@
 }
 
 .contact__value:hover {
+  color: var(--color-accent-strong);
   text-decoration: underline;
 }
 

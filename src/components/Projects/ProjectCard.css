@@ -3,6 +3,11 @@
   border-radius: var(--radius-md);
   background: var(--color-bg);
   overflow: hidden;
+  transition: border-color var(--transition-fast);
+}
+
+.project-card:hover {
+  border-color: var(--color-text-muted);
 }
 
 .project-card + .project-card {
@@ -10,7 +15,7 @@
 }
 
 .project-card--open {
-  border-color: var(--color-text-muted);
+  border-color: var(--color-accent-strong);
 }
 
 .project-card__header {
@@ -56,6 +61,12 @@
   justify-content: center;
   font-size: 1.1rem;
   color: var(--color-text-muted);
+  transition: border-color var(--transition-fast), color var(--transition-fast);
+}
+
+.project-card--open .project-card__toggle {
+  border-color: var(--color-accent-strong);
+  color: var(--color-accent-strong);
 }
 
 .project-card__panel {
