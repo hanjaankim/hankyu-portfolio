@@ -41,19 +41,28 @@
   border-radius: 12px;
 }
 
+.image-group__caption {
+  margin: var(--space-2) 0 0;
+  text-align: center;
+  font-size: var(--fs-tiny);
+  color: var(--color-text-faint);
+}
+
 /* Unframed screens: the source image is already a composed shot (status
    bar, browser chrome, etc.), so we don't add a second device frame.
-   Fixed height + auto width keeps a tall phone crop and a wide web
-   screenshot at a comparable visual weight in the same row. */
+   Fixed height on the IMAGE (not the figure) + auto width keeps a tall
+   phone crop and a wide web screenshot at a comparable visual weight in
+   the same row, while leaving the figure free to grow for the caption
+   underneath it — a fixed-height figure with an image+caption stuffed
+   inside it overflows and reads as a stray scrollbar. */
 .image-group__plain-screen {
   flex: 0 0 auto;
-  height: 340px;
   margin: 0;
 }
 
 .image-group__plain-screen .image-placeholder {
   width: auto;
-  height: 100%;
+  height: 420px;
   border-radius: var(--radius-sm);
 }
 
@@ -61,6 +70,12 @@
   margin-top: var(--space-2);
   font-size: var(--fs-tiny);
   color: var(--color-text-faint);
+}
+
+@media (max-width: 640px) {
+  .image-group__plain-screen .image-placeholder {
+    height: 300px;
+  }
 }
 
 /* Planning artifacts (IA, wireframes, spec docs): a legible grid — large

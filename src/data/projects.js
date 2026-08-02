@@ -650,17 +650,6 @@ const projects = [
     ],
     outcome:
       "안건 218건 중 206건 완료(94%), GCR(그래픽 변경요청) 2,231건 반영(신규 588/수정 1,389/기타 254)",
-    stats: {
-      meter: { label: "안건 완료율", value: 206, max: 218, displayValue: "206 / 218건 (94%)" },
-      bars: {
-        title: "GCR(Graphic Change Request) 반영 현황 — 전체 2,231건",
-        items: [
-          { label: "신규", value: 588 },
-          { label: "수정", value: 1389 },
-          { label: "기타", value: 254 },
-        ],
-      },
-    },
   },
 ];
 
