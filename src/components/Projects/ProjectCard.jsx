@@ -1,6 +1,6 @@
 import { useEffect, useId } from "react";
 import ImagePlaceholder from "../ImagePlaceholder/ImagePlaceholder";
-import ProcessFlow from "./ProcessFlow";
+import Gantt from "./Gantt";
 import ProjectStats from "./ProjectStats";
 import useReveal from "../../hooks/useReveal";
 import "./ProjectCard.css";
@@ -103,7 +103,7 @@ function ProjectCard({ project, isOpen, onToggle }) {
           {project.processFlow && (
             <div className="project-card__block">
               <h4 className="project-card__block-title">진행 프로세스</h4>
-              <ProcessFlow steps={project.processFlow} />
+              <Gantt period={project.period} phases={project.processFlow} />
             </div>
           )}
 
