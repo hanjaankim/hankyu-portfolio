@@ -1,14 +1,21 @@
 .hero {
   min-height: calc(100svh - var(--header-height));
   display: flex;
-  align-items: center;
+  align-items: stretch;
 }
 
 .hero__inner {
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
+  justify-content: space-between;
+  gap: var(--space-7);
   padding-block: var(--space-6);
+}
+
+.hero__intro {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
 }
 
 .hero__eyebrow {
@@ -43,43 +50,57 @@
   max-width: 42ch;
 }
 
-.hero__actions {
+.hero__focus {
   display: flex;
-  gap: var(--space-3);
-  margin-top: var(--space-3);
   flex-wrap: wrap;
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-5);
 }
 
-.hero__link {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.7rem 1.4rem;
-  border-radius: var(--radius-pill);
-  border: 1px solid var(--color-border);
-  text-decoration: none;
-  font-size: var(--fs-small);
+.hero__focus-item {
+  flex: 1 1 160px;
+  padding-right: var(--space-4);
+  border-left: 1px solid var(--color-border);
+  padding-left: var(--space-4);
+}
+
+.hero__focus-item:first-child {
+  border-left: none;
+  padding-left: 0;
+}
+
+.hero__focus-label {
+  font-size: var(--fs-h3);
   font-weight: 600;
-  color: var(--color-text);
-  transition: border-color var(--transition-fast), opacity var(--transition-fast);
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-2);
 }
 
-.hero__link:hover {
-  border-color: var(--color-accent-strong);
-}
-
-.hero__link--primary {
-  background: var(--color-accent);
-  color: var(--color-bg);
-  border-color: var(--color-accent);
-}
-
-.hero__link--primary:hover {
-  opacity: 0.88;
-  border-color: var(--color-accent);
+.hero__focus-caption {
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+  line-height: var(--lh-base);
 }
 
 @media (max-width: 640px) {
   .hero {
     min-height: calc(88svh - var(--header-height));
+  }
+
+  .hero__focus {
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .hero__focus-item {
+    border-left: none;
+    border-top: 1px solid var(--color-border);
+    padding-left: 0;
+    padding-top: var(--space-3);
+  }
+
+  .hero__focus-item:first-child {
+    border-top: none;
+    padding-top: 0;
   }
 }

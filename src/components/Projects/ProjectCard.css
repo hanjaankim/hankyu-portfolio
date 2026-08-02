@@ -97,20 +97,6 @@
   margin-bottom: var(--space-2);
 }
 
-.project-card__tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-2);
-}
-
-.project-card__tag {
-  font-size: var(--fs-small);
-  padding: 0.3rem 0.75rem;
-  border-radius: 999px;
-  background: var(--color-surface);
-  color: var(--color-text-muted);
-}
-
 .project-card__details {
   display: flex;
   flex-direction: column;
@@ -138,6 +124,43 @@
 .project-card__images {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: var(--space-3);
+}
+
+.project-card__phones {
+  display: flex;
+  gap: var(--space-4);
+  overflow-x: auto;
+  padding-bottom: var(--space-2);
+  scrollbar-width: thin;
+}
+
+.project-card__phone-frame {
+  flex: 0 0 auto;
+  width: 200px;
+  padding: 0.4rem 0.4rem 0.6rem;
+  border: 1px solid var(--color-border);
+  border-radius: 18px;
+  background: var(--color-surface);
+}
+
+.project-card__phone-frame::before {
+  content: "";
+  display: block;
+  width: 32px;
+  height: 4px;
+  border-radius: 999px;
+  background: var(--color-border);
+  margin: 0 auto var(--space-2);
+}
+
+.project-card__phone-frame .image-placeholder {
+  border-radius: 12px;
+}
+
+.project-card__wides {
+  display: flex;
+  flex-direction: column;
   gap: var(--space-3);
 }
 

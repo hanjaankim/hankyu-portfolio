@@ -8,6 +8,11 @@ function ProjectCard({ project }) {
   const panelId = useId();
   const [ref, isVisible] = useReveal();
 
+  const images = project.images ?? [];
+  const phoneImages = images.filter((image) => image.type === "phone");
+  const wideImages = images.filter((image) => image.type === "wide");
+  const gridImages = images.filter((image) => !image.type);
+
   return (
     <li
       ref={ref}
@@ -42,34 +47,41 @@ function ProjectCard({ project }) {
             </p>
           )}
 
-          {project.role?.length > 0 && (
-            <div className="project-card__block">
-              <h4 className="project-card__block-title">역할</h4>
-              <ul className="project-card__tags">
-                {project.role.map((role) => (
-                  <li key={role} className="project-card__tag">
-                    {role}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-
-          {project.details?.length > 0 && (
-            <div className="project-card__block">
-              <h4 className="project-card__block-title">상세</h4>
+          {project.roleGroups?.map((group) => (
+            <div className="project-card__block" key={group.category}>
+              <h4 className="project-card__block-title">{group.category}</h4>
               <ul className="project-card__details">
-                {project.details.map((detail) => (
-                  <li key={detail}>{detail}</li>
+                {group.items.map((item) => (
+                  <li key={item}>{item}</li>
                 ))}
               </ul>
             </div>
+          ))}
+
+          {phoneImages.length > 0 && (
+            <div className="project-card__block">
+              <div className="project-card__phones">
+                {phoneImages.map((image) => (
+                  <div className="project-card__phone-frame" key={image.label}>
+                    <ImagePlaceholder label={image.label} ratio={image.ratio} />
+                  </div>
+                ))}
+              </div>
+            </div>
           )}
 
-          {project.images?.length > 0 && (
+          {wideImages.length > 0 && (
+            <div className="project-card__block project-card__wides">
+              {wideImages.map((image) => (
+                <ImagePlaceholder key={image.label} label={image.label} ratio={image.ratio} />
+              ))}
+            </div>
+          )}
+
+          {gridImages.length > 0 && (
             <div className="project-card__block">
               <div className="project-card__images">
-                {project.images.map((image) => (
+                {gridImages.map((image) => (
                   <ImagePlaceholder
                     key={image.label}
                     label={image.label}
