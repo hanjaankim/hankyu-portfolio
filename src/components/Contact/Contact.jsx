@@ -21,28 +21,6 @@ function Contact() {
               {contact.email}
             </a>
           </li>
-          <li className="contact__item">
-            <span className="contact__label">LinkedIn</span>
-            <a
-              className="contact__value"
-              href={contact.linkedin}
-              target="_blank"
-              rel="noreferrer"
-            >
-              {contact.linkedin}
-            </a>
-          </li>
-          <li className="contact__item">
-            <span className="contact__label">GitHub</span>
-            <a
-              className="contact__value"
-              href={contact.github}
-              target="_blank"
-              rel="noreferrer"
-            >
-              {contact.github}
-            </a>
-          </li>
         </ul>
       </div>
     </section>

@@ -26,13 +26,13 @@ const projects = [
       {
         category: "프로젝트 관리",
         items: [
-          "외주 개발사(해외) 선정 및 운영관리, Slack 협업·GitHub 스프린트 단위 진행 관리",
-          "법무 전문가와 협업해 서비스 약관·컴플라이언스 대응",
+          "외주 개발사(해외) 선정 및 운영관리, Slack·Notion·Linear를 활용하여 스프린트 단위 진행 관리",
+          "법무 전문가와 협업해 서비스 약관·위치기반 서비스 사업 신고 등 행정처리 대응",
           "기획 의도 반영 여부와 제품 완성도를 점검하는 QA 체크리스트 운영(버그/기획변경/전달사항 구분), 이슈 취합 후 외주 개발사에 전달·트래킹(약 50건 이상)",
         ],
       },
     ],
-    outcome: "기획부터 앱스토어·구글플레이 정식 출시까지 0→1 완주, 이후 프로젝트에도 재사용 가능한 PRD 작성 포맷과 QA 프로세스 구축",
+    outcome: "기획부터 앱스토어·구글플레이 앱 심사 및 정식 출시까지 매니징, 론칭 이후 기능 개선 필요사항 기획 및 운영 팔로우",
     appLinks: {
       ios: "https://apps.apple.com/kr/app/bside-all-about-artworks/id6761592166?l=en-GB",
       android: "https://play.google.com/store/apps/details?id=art.bside.app",
