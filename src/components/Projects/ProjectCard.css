@@ -88,6 +88,12 @@
   text-decoration: underline;
 }
 
+.project-card__background {
+  color: var(--color-text-muted);
+  font-size: var(--fs-small);
+  max-width: 68ch;
+}
+
 .project-card__block-title {
   font-size: var(--fs-tiny);
   letter-spacing: 0.06em;

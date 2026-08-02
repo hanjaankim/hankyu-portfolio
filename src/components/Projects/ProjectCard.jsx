@@ -47,6 +47,13 @@ function ProjectCard({ project }) {
             </p>
           )}
 
+          {project.background && (
+            <div className="project-card__block">
+              <h4 className="project-card__block-title">배경</h4>
+              <p className="project-card__background">{project.background}</p>
+            </div>
+          )}
+
           {project.roleGroups?.map((group) => (
             <div className="project-card__block" key={group.category}>
               <h4 className="project-card__block-title">{group.category}</h4>
@@ -96,6 +103,13 @@ function ProjectCard({ project }) {
             <div className="project-card__block">
               <h4 className="project-card__block-title">성과</h4>
               <p className="project-card__outcome">{project.outcome}</p>
+            </div>
+          )}
+
+          {!project.outcome && project.expectedEffect && (
+            <div className="project-card__block">
+              <h4 className="project-card__block-title">기대효과</h4>
+              <p className="project-card__outcome">{project.expectedEffect}</p>
             </div>
           )}
         </div>

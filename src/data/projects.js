@@ -5,6 +5,8 @@ const projects = [
     period: "2025.01 — 2026.03 (론칭 2026.04)",
     summary:
       "오프라인 전시 캡처·기록·공유 아트 플랫폼 앱을 기획부터 론칭까지 총괄",
+    background:
+      "오프라인 전시를 보고 난 후의 기록이 휴대폰 사진첩에 흩어져 사라지는 경우가 많았고, 이를 캡처·정리·공유로 이어주는 서비스가 마땅히 없다는 문제의식에서 출발한 프로젝트.",
     roleGroups: [
       {
         category: "사업기획",
@@ -50,6 +52,7 @@ const projects = [
     title: "bside 유저 획득 마케팅 캠페인",
     period: "2026.04 — 2026.07",
     summary: "자연 유입이 없던 초기 앱에 리워드 이벤트로 유의미한 유저 데이터 확보",
+    background: "앱 론칭 이후 자연 유입만으로는 실사용 데이터가 쌓이지 않는 문제를 해결하기 위해 기획.",
     roleGroups: [
       {
         category: "마케팅 기획",
@@ -78,6 +81,7 @@ const projects = [
     period: "2025.06 — 2025.10",
     url: "pipegallery.com",
     summary: "기존 cafe24 기반 사이트를 Next.js 기반 자체 시스템으로 전면 리뉴얼",
+    background: "기존 cafe24 기반 사이트가 확장성과 커스터마이징에 한계가 있어, 자체 시스템으로 전환할 필요가 있었음.",
     roleGroups: [
       {
         category: "프로젝트 총괄",
@@ -100,6 +104,8 @@ const projects = [
     title: "Selvas AI — ACCUNIQ Cloud 통합 리뉴얼",
     period: "2022.03 — 2022.12",
     summary: "체성분 측정 서비스 · 센터 관리 서비스 통합 리뉴얼",
+    background:
+      "자회사 Selvas Healthcare의 체성분 측정장비와 연계된 사용자 앱 리뉴얼, 그리고 센터·트레이너용 태블릿PC 전용앱 개발 요청에서 시작된 프로젝트.",
     roleGroups: [
       {
         category: "서비스기획",
@@ -118,6 +124,8 @@ const projects = [
       },
     ],
     outcome: "",
+    expectedEffect:
+      "체성분 측정 데이터를 클라우드로 연동해 효과적인 데이터 관리와 다양한 경로의 데이터 수집을 가능하게 하고, 사용자앱 리뉴얼과 센터·트레이너 전용앱 개발로 서비스 전반의 사용성과 편의 기능을 강화.",
     images: [
       { label: "화면설계서", ratio: "4 / 3" },
       { label: "앱/관리자 최종 결과물", ratio: "4 / 3" },
@@ -128,6 +136,8 @@ const projects = [
     title: "Selvas AI — OnFit 매니저 전용앱 리뉴얼",
     period: "2022.04 — 2022.07",
     summary: "트레이너 전용 앱의 UX/GUI 개선",
+    background:
+      "자사 솔루션 OnFit의 트레이너 전용 앱에 대한 사용성·디자인 개선 니즈를 고객사가 제기하며 시작, 서비스 전반의 UX 설계와 GUI 개선을 진행.",
     roleGroups: [
       {
         category: "서비스기획",
@@ -149,6 +159,8 @@ const projects = [
       },
     ],
     outcome: "",
+    expectedEffect:
+      "기존 UI 및 메뉴 구조를 개선해 사용성과 사용자 경험을 높이고, 트레이너·강사의 업무 효율 증대를 기대.",
     images: [
       { label: "Wireframe / Prototype", ratio: "9 / 16", type: "phone" },
       { label: "최종 앱 결과물", ratio: "9 / 16", type: "phone" },
@@ -159,6 +171,8 @@ const projects = [
     title: "Selvas AI — Born This Way+ 앱 서비스 구축",
     period: "2022.01 — 2022.05",
     summary: "유전 체질 기반 맞춤 건강관리 앱 (LG생활건강)",
+    background:
+      "고객의 피부·두피, 영양소, 피트니스 건강관리 영역을 유전적 측면과 실제 발현 상태 양쪽에서 동시에 진단·처방하는 서비스를 제공하기 위해 추진. 챌린지 메뉴는 마이데이터·리포트 분석 결과를 기반으로 개인화된 건강 개선 활동을 유도하고, 실제 수행 여부를 평가하는 방식으로 기획.",
     roleGroups: [
       {
         category: "서비스기획",
@@ -187,6 +201,8 @@ const projects = [
     title: "Selvas AI — 케어나우 3.0 통합 리뉴얼",
     period: "2021.08 — 2022.10",
     summary: "초개인화 건강 큐레이션 앱 (한국인삼공사)",
+    background:
+      "언택트 서비스, 개인 맞춤형 헬스케어, 온/오프라인 통합이 확산되는 흐름에 맞춰 AI 기반 서비스로 헬스케어 서비스를 차별화하기 위해 추진.",
     roleGroups: [
       {
         category: "서비스기획",
@@ -204,6 +220,8 @@ const projects = [
       },
     ],
     outcome: "",
+    expectedEffect:
+      "AI 솔루션과 개발 실행을 통해 고객사에 차별화된 헬스케어 서비스를 제공하고, 개인 건강 데이터 기반으로 건강관리부터 건강기능식품 구매까지 한 번에 가능한 플랫폼으로 구매여정을 최소화.",
     images: [{ label: "정보구조도 / 화면설계서 / 최종 결과물", ratio: "16 / 9", type: "wide" }],
   },
   {
@@ -211,6 +229,8 @@ const projects = [
     title: "d-flux — 현대차 2세대 클러스터 표준 GUI 운용",
     period: "2018.01 — 2019.09",
     summary: "현대자동차 클러스터 표준그래픽 사양 협의·제작·배포 운용",
+    background:
+      "현대차 클러스터 표준그래픽에 대한 협력사들의 문의·협의 수요가 지속적으로 발생해, 이를 체계적으로 관리·운용할 창구가 필요했음.",
     roleGroups: [
       {
         category: "Project Managing",
