@@ -65,6 +65,12 @@
 }
 
 .hero__inner {
+  /* .hero is a flex row, so this flex item shrinks to its content's
+     width by default — max-width alone (from .container) only caps
+     growth, it doesn't fill available space the way a plain block
+     box would. width:100% makes it actually reach that cap before
+     centering via the auto margins. */
+  width: 100%;
   position: relative;
   z-index: 1;
   display: flex;
