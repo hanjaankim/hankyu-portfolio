@@ -33,16 +33,64 @@ const projects = [
       },
     ],
     outcome: "기획부터 앱스토어·구글플레이 정식 출시까지 0→1 완주, 이후 프로젝트에도 재사용 가능한 PRD 작성 포맷과 QA 프로세스 구축",
-    processFlow: ["사업기획", "서비스기획", "외주사 선정·운영관리", "QA"],
     appLinks: {
       ios: "https://apps.apple.com/kr/app/bside-all-about-artworks/id6761592166?l=en-GB",
       android: "https://play.google.com/store/apps/details?id=art.bside.app",
     },
-    images: [
-      { label: "앱 스크린샷 — 온보딩", ratio: "9 / 16", type: "phone" },
-      { label: "앱 스크린샷 — 카메라", ratio: "9 / 16", type: "phone" },
-      { label: "앱 스크린샷 — 피드", ratio: "9 / 16", type: "phone" },
-      { label: "앱 스크린샷 — 마이페이지", ratio: "9 / 16", type: "phone" },
+    imageGroups: [
+      {
+        title: "제품 화면",
+        type: "screens",
+        items: [
+          {
+            label: "온보딩 — 동네 선택",
+            ratio: "715 / 1452",
+            src: "/images/bside-app-launch/01-AppScreen/screen-onboarding.png",
+          },
+          {
+            label: "홈 — 캡처·피드",
+            ratio: "727 / 1464",
+            src: "/images/bside-app-launch/01-AppScreen/screen-home.png",
+          },
+          {
+            label: "카메라 — 작품 캡처",
+            ratio: "715 / 1452",
+            src: "/images/bside-app-launch/01-AppScreen/screen-capture.png",
+          },
+          {
+            label: "마이페이지",
+            ratio: "715 / 1452",
+            src: "/images/bside-app-launch/01-AppScreen/screen-mypage.png",
+          },
+        ],
+      },
+      {
+        title: "구조 설계",
+        type: "wide",
+        items: [
+          {
+            label: "정보구조도(IA)",
+            ratio: "2162 / 1066",
+            src: "/images/bside-app-launch/02-IA/ia-flowchart.png",
+          },
+          {
+            label: "서비스 시스템 아키텍처",
+            ratio: "1840 / 836",
+            src: "/images/bside-app-launch/03-AppFlow/appflow-diagram.png",
+          },
+        ],
+      },
+      {
+        title: "일정 관리",
+        type: "wide",
+        items: [
+          {
+            label: "스프린트 타임라인(Gantt)",
+            ratio: "1920 / 1080",
+            src: "/images/bside-app-launch/04-Timeline-GANT-Chart/gantt-chart.png",
+          },
+        ],
+      },
     ],
   },
   {
@@ -77,9 +125,28 @@ const projects = [
         { label: "캡처 데이터", value: "약 10,000건" },
       ],
     },
-    images: [
-      { label: "이벤트 포스터", ratio: "3 / 4" },
-      { label: "활동가이드", ratio: "3 / 4" },
+    imageGroups: [
+      {
+        title: "실행 자료",
+        type: "ops",
+        items: [
+          {
+            label: "이벤트 포스터",
+            ratio: "1080 / 1528",
+            src: "/images/bside-user-acquisition/01_poster/poster.png",
+          },
+          {
+            label: "활동가이드(Notion)",
+            ratio: "1017 / 1528",
+            src: "/images/bside-user-acquisition/02-notion-guide/notion-guide.png",
+          },
+          {
+            label: "참여자 모집 폼",
+            ratio: "2115 / 1528",
+            src: "/images/bside-user-acquisition/03-google-form/google-form.png",
+          },
+        ],
+      },
     ],
   },
   {
@@ -115,9 +182,34 @@ const projects = [
       },
     ],
     outcome: "기존 홈페이지+관리자페이지를 자체 설계 시스템으로 완전 대체",
-    images: [
-      { label: "Before(cafe24) / After(Next.js) 비교 스크린샷", ratio: "16 / 9", type: "wide" },
-      { label: "관리자 CRUD 화면 (전시·작가·작품 관리)", ratio: "16 / 9", type: "wide" },
+    imageGroups: [
+      {
+        title: "제품 화면",
+        type: "wide",
+        items: [
+          {
+            label: "아티스트 리스트",
+            ratio: "2012 / 1419",
+            src: "/images/pipegallery-renewal/1-webscreen/ArtistList.png",
+          },
+          {
+            label: "홈 — 전시 소개",
+            ratio: "2011 / 1419",
+            src: "/images/pipegallery-renewal/1-webscreen/homescreen.png",
+          },
+        ],
+      },
+      {
+        title: "관리자 화면",
+        type: "wide",
+        items: [
+          {
+            label: "관리자 — 전시 관리(CRUD)",
+            ratio: "2011 / 1419",
+            src: "/images/pipegallery-renewal/2-admin/admin-exhibitions.png",
+          },
+        ],
+      },
     ],
   },
   {
@@ -147,10 +239,81 @@ const projects = [
     outcome: "",
     expectedEffect:
       "체성분 측정 데이터를 클라우드로 연동해 효과적인 데이터 관리와 다양한 경로의 데이터 수집을 가능하게 하고, 사용자앱 리뉴얼과 센터·트레이너 전용앱 개발로 서비스 전반의 사용성과 편의 기능을 강화.",
-    processFlow: ["요구사항 분석", "서비스/화면 기획", "화면설계서 작성", "개발 산출물 검수"],
-    images: [
-      { label: "화면설계서", ratio: "4 / 3", type: "doc" },
-      { label: "앱/관리자 최종 결과물", ratio: "4 / 3", type: "wide" },
+    imageGroups: [
+      {
+        title: "제품 화면",
+        type: "screens",
+        items: [
+          {
+            label: "홈 — 체성분 측정",
+            ratio: "352 / 755",
+            src: "/images/selvas-accuniq-cloud/2-AppScreen/screen-home.png",
+          },
+          {
+            label: "체성분 분석 결과",
+            ratio: "352 / 755",
+            src: "/images/selvas-accuniq-cloud/2-AppScreen/screen-body-analysis.png",
+          },
+          {
+            label: "체성분 추이 그래프",
+            ratio: "352 / 755",
+            src: "/images/selvas-accuniq-cloud/2-AppScreen/screen-trend-graph.png",
+          },
+          {
+            label: "칼로리 가이드",
+            ratio: "352 / 755",
+            src: "/images/selvas-accuniq-cloud/2-AppScreen/screen-calorie-guide.png",
+          },
+        ],
+      },
+      {
+        title: "관리자 화면",
+        type: "wide",
+        items: [
+          {
+            label: "헬스 매니저 웹 — 트레이너 관리",
+            ratio: "1184 / 631",
+            src: "/images/selvas-accuniq-cloud/2-AppScreen/screen-manager-web.png",
+          },
+        ],
+      },
+      {
+        title: "기획 산출물 — 화면설계서",
+        type: "artifacts",
+        items: [
+          {
+            label: "화면설계서 — 칼로리 가이드 생성",
+            ratio: "805 / 449",
+            src: "/images/selvas-accuniq-cloud/3-spec/spec-01.png",
+          },
+          {
+            label: "화면설계서 — 홈/서비스 소개",
+            ratio: "805 / 448",
+            src: "/images/selvas-accuniq-cloud/3-spec/spec-02.png",
+          },
+          {
+            label: "화면설계서 — 체성분 정보",
+            ratio: "805 / 449",
+            src: "/images/selvas-accuniq-cloud/3-spec/spec-03.png",
+          },
+          {
+            label: "화면설계서 — 프로세스 플로우",
+            ratio: "805 / 448",
+            src: "/images/selvas-accuniq-cloud/3-spec/spec-04.png",
+          },
+        ],
+      },
+      {
+        title: "일정 관리",
+        type: "wide",
+        items: [
+          {
+            label: "프로젝트 타임라인(Gantt)",
+            ratio: "2090 / 485",
+            src: "/images/selvas-accuniq-cloud/1-gantt-chart/gantt-chart.png",
+          },
+        ],
+      },
     ],
   },
   {
@@ -183,18 +346,89 @@ const projects = [
     outcome: "",
     expectedEffect:
       "기존 UI 및 메뉴 구조를 개선해 사용성과 사용자 경험을 높이고, 트레이너·강사의 업무 효율 증대를 기대.",
-    images: [
+    imageGroups: [
       {
-        label: "Wireframe / Prototype",
-        ratio: "1288 / 1080",
-        type: "doc",
-        src: "/images/selvas-onfit-manager/02-wirefram-prototype/wireframe-prototype.png",
+        title: "제품 화면",
+        type: "screens",
+        items: [
+          {
+            label: "스케줄",
+            ratio: "326 / 698",
+            src: "/images/selvas-onfit-manager/01-final-app/screen-schedule.png",
+          },
+          {
+            label: "회원 상세보기",
+            ratio: "326 / 698",
+            src: "/images/selvas-onfit-manager/01-final-app/screen-member-detail.png",
+          },
+          {
+            label: "1:1 수업 설정",
+            ratio: "326 / 698",
+            src: "/images/selvas-onfit-manager/01-final-app/screen-createclass.png",
+          },
+          {
+            label: "그룹 수업 상세",
+            ratio: "327 / 698",
+            src: "/images/selvas-onfit-manager/01-final-app/screen-manageclass.png",
+          },
+          {
+            label: "차트북 — 운동 기록",
+            ratio: "321 / 697",
+            src: "/images/selvas-onfit-manager/01-final-app/screen-workout-log.png",
+          },
+        ],
       },
       {
-        label: "최종 앱 결과물",
-        ratio: "960 / 1080",
+        title: "기획 산출물 — Wireframe",
+        type: "artifacts",
+        items: [
+          {
+            label: "Wireframe — 스케줄",
+            ratio: "268 / 581",
+            src: "/images/selvas-onfit-manager/02-wireframe/wireframe-schedule.png",
+          },
+          {
+            label: "Wireframe — 그룹수업 상세",
+            ratio: "268 / 581",
+            src: "/images/selvas-onfit-manager/02-wireframe/wireframe-schedule2.png",
+          },
+          {
+            label: "Wireframe — 회원 상세",
+            ratio: "268 / 581",
+            src: "/images/selvas-onfit-manager/02-wireframe/wireframe-member-detail.png",
+          },
+          {
+            label: "Wireframe — 회원권 목록",
+            ratio: "268 / 581",
+            src: "/images/selvas-onfit-manager/02-wireframe/wireframe-membership.png",
+          },
+          {
+            label: "Wireframe — 그룹 수업 상세2",
+            ratio: "267 / 581",
+            src: "/images/selvas-onfit-manager/02-wireframe/wireframe-class-detail.png",
+          },
+          {
+            label: "Wireframe — 댓글",
+            ratio: "268 / 581",
+            src: "/images/selvas-onfit-manager/02-wireframe/wireframe-comment.png",
+          },
+          {
+            label: "Wireframe — 식단 관리",
+            ratio: "267 / 581",
+            src: "/images/selvas-onfit-manager/02-wireframe/wireframe-diet.png",
+          },
+        ],
+      },
+      {
+        title: "유저플로우",
         type: "wide",
-        src: "/images/selvas-onfit-manager/01-final-app/final-app.png",
+        items: [
+          {
+            label: "Prototype 유저플로우",
+            ratio: "1621 / 838",
+            src: "/images/selvas-onfit-manager/03-prototype/prototype-flow.png",
+          },
+        ],
       },
     ],
   },
@@ -223,9 +457,64 @@ const projects = [
       },
     ],
     outcome: "",
-    images: [
-      { label: "정보구조도", ratio: "4 / 3", type: "doc" },
-      { label: "최종 앱 결과물", ratio: "9 / 16", type: "phone" },
+    imageGroups: [
+      {
+        title: "제품 화면",
+        type: "screens",
+        items: [
+          {
+            label: "홈 — 챌린지 현황",
+            ratio: "316 / 721",
+            src: "/images/selvas-born-this-way/5-AppScreen/screen-home.png",
+          },
+          {
+            label: "챌린지 참여 내역",
+            ratio: "316 / 721",
+            src: "/images/selvas-born-this-way/5-AppScreen/screen-challenge.png",
+          },
+          {
+            label: "마이데이터",
+            ratio: "316 / 721",
+            src: "/images/selvas-born-this-way/5-AppScreen/screen-mydata.png",
+          },
+          {
+            label: "건강 리포트",
+            ratio: "316 / 721",
+            src: "/images/selvas-born-this-way/5-AppScreen/screen-health-report.png",
+          },
+          {
+            label: "영양제 분석",
+            ratio: "316 / 721",
+            src: "/images/selvas-born-this-way/5-AppScreen/screen-supplement.png",
+          },
+        ],
+      },
+      {
+        title: "기획 산출물",
+        type: "artifacts",
+        items: [
+          {
+            label: "챌린지 건강나무 성장 정책",
+            ratio: "1305 / 672",
+            src: "/images/selvas-born-this-way/2-LevelSystemDesignPlanning/level-system-diagram.png",
+          },
+          {
+            label: "정보구조도(IA)",
+            ratio: "1057 / 2174",
+            src: "/images/selvas-born-this-way/3-IA/ia-table.png",
+          },
+          {
+            label: "화면설계서 — 햄버거 메뉴",
+            ratio: "1008 / 565",
+            src: "/images/selvas-born-this-way/4-spec/spec-01.png",
+          },
+          {
+            label: "화면설계서 — 영양제 분석",
+            ratio: "1014 / 565",
+            src: "/images/selvas-born-this-way/4-spec/spec-02.png",
+          },
+        ],
+      },
     ],
   },
   {
@@ -254,7 +543,77 @@ const projects = [
     outcome: "",
     expectedEffect:
       "AI 솔루션과 개발 실행을 통해 고객사에 차별화된 헬스케어 서비스를 제공하고, 개인 건강 데이터 기반으로 건강관리부터 건강기능식품 구매까지 한 번에 가능한 플랫폼으로 구매여정을 최소화.",
-    images: [{ label: "정보구조도 / 화면설계서 / 최종 결과물", ratio: "16 / 9", type: "wide" }],
+    imageGroups: [
+      {
+        title: "제품 화면",
+        type: "screens",
+        items: [
+          {
+            label: "홈 화면",
+            ratio: "421 / 911",
+            src: "/images/selvas-carenow-3/1-AppScreen/screen-home.png",
+          },
+          {
+            label: "건강분석 온보딩",
+            ratio: "417 / 911",
+            src: "/images/selvas-carenow-3/1-AppScreen/screen-onboarding.png",
+          },
+          {
+            label: "맞춤 건강 리포트",
+            ratio: "432 / 911",
+            src: "/images/selvas-carenow-3/1-AppScreen/screen-health-report.png",
+          },
+          {
+            label: "밸런스 체크 결과",
+            ratio: "424 / 911",
+            src: "/images/selvas-carenow-3/1-AppScreen/screen-balance-check.png",
+          },
+        ],
+      },
+      {
+        title: "구조 설계",
+        type: "wide",
+        items: [
+          {
+            label: "정보구조도(IA)",
+            ratio: "2298 / 1264",
+            src: "/images/selvas-carenow-3/2-InformationArchitecture/ia-diagram.png",
+          },
+        ],
+      },
+      {
+        title: "관리자 화면",
+        type: "wide",
+        items: [
+          {
+            label: "관리자 — 회원 관리",
+            ratio: "1106 / 619",
+            src: "/images/selvas-carenow-3/3-adminWeb/admin-members.png",
+          },
+        ],
+      },
+      {
+        title: "기획 산출물 — 화면설계서",
+        type: "artifacts",
+        items: [
+          {
+            label: "화면설계서 표지",
+            ratio: "471 / 264",
+            src: "/images/selvas-carenow-3/4-spec/spec-cover.png",
+          },
+          {
+            label: "화면설계서 — 프로세스 플로우",
+            ratio: "471 / 262",
+            src: "/images/selvas-carenow-3/4-spec/spec-flow.png",
+          },
+          {
+            label: "화면설계서 — Wireframe",
+            ratio: "471 / 263",
+            src: "/images/selvas-carenow-3/4-spec/spec-wireframe.png",
+          },
+        ],
+      },
+    ],
   },
   {
     id: "dflux-hyundai-cluster",
@@ -288,9 +647,15 @@ const projects = [
         ],
       },
     },
-    images: [
-      { label: "운용 프로세스 다이어그램", ratio: "16 / 9", type: "wide" },
-      { label: "벤치마킹 이미지", ratio: "4 / 3", type: "wide" },
+    imageGroups: [
+      {
+        title: "운용 자료",
+        type: "wide",
+        items: [
+          { label: "운용 프로세스 다이어그램", ratio: "16 / 9" },
+          { label: "벤치마킹 이미지", ratio: "4 / 3" },
+        ],
+      },
     ],
   },
 ];

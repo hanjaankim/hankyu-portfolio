@@ -1,0 +1,72 @@
+.image-group__artifact {
+  margin: 0;
+}
+
+.image-group__artifact figcaption {
+  margin-top: var(--space-2);
+  font-size: var(--fs-tiny);
+  color: var(--color-text-faint);
+}
+
+/* Real product screens: horizontally scrollable, phone-framed, generously
+   sized — this is the "does it actually exist" evidence. */
+.image-group--screens {
+  display: flex;
+  gap: var(--space-4);
+  overflow-x: auto;
+  padding-bottom: var(--space-2);
+  scrollbar-width: thin;
+}
+
+.image-group__phone-frame {
+  flex: 0 0 auto;
+  width: 220px;
+  padding: 0.4rem 0.4rem 0.6rem;
+  border: 1px solid var(--color-border);
+  border-radius: 18px;
+  background: var(--color-surface);
+}
+
+.image-group__phone-frame::before {
+  content: "";
+  display: block;
+  width: 32px;
+  height: 4px;
+  border-radius: 999px;
+  background: var(--color-border);
+  margin: 0 auto var(--space-2);
+}
+
+.image-group__phone-frame .image-placeholder {
+  border-radius: 12px;
+}
+
+/* Planning artifacts (IA, wireframes, spec docs): a legible grid — large
+   enough to actually read the diagram/document, not a token thumbnail. */
+.image-group--artifacts {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--space-4);
+}
+
+/* A single large reference: gantt charts, IA diagrams, admin screens —
+   full panel width. */
+.image-group--wide {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+/* Operational material: posters, docs, forms — plain grid, medium size. */
+.image-group--ops {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--space-4);
+}
+
+@media (max-width: 480px) {
+  .image-group--artifacts,
+  .image-group--ops {
+    grid-template-columns: 1fr;
+  }
+}

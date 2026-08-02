@@ -1,6 +1,5 @@
 import { useEffect, useId } from "react";
-import ImagePlaceholder from "../ImagePlaceholder/ImagePlaceholder";
-import Gantt from "./Gantt";
+import ImageGroup from "./ImageGroup";
 import ProjectStats from "./ProjectStats";
 import useReveal from "../../hooks/useReveal";
 import "./ProjectCard.css";
@@ -14,12 +13,6 @@ function ProjectCard({ project, isOpen, onToggle }) {
       ref.current?.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   }, [isOpen, ref]);
-
-  const images = project.images ?? [];
-  const phoneImages = images.filter((image) => image.type === "phone");
-  const wideImages = images.filter((image) => image.type === "wide");
-  const docImages = images.filter((image) => image.type === "doc");
-  const gridImages = images.filter((image) => !image.type);
 
   return (
     <li
@@ -100,68 +93,14 @@ function ProjectCard({ project, isOpen, onToggle }) {
             </div>
           ))}
 
-          {project.processFlow && (
-            <div className="project-card__block">
-              <h4 className="project-card__block-title">진행 프로세스</h4>
-              <Gantt period={project.period} phases={project.processFlow} />
-            </div>
-          )}
-
-          {phoneImages.length > 0 && (
-            <div className="project-card__block">
-              <div className="project-card__phones">
-                {phoneImages.map((image) => (
-                  <div className="project-card__phone-frame" key={image.label}>
-                    <ImagePlaceholder label={image.label} ratio={image.ratio} src={image.src} />
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {wideImages.length > 0 && (
-            <div className="project-card__block project-card__wides">
-              {wideImages.map((image) => (
-                <ImagePlaceholder
-                  key={image.label}
-                  label={image.label}
-                  ratio={image.ratio}
-                  src={image.src}
-                />
-              ))}
-            </div>
-          )}
-
-          {docImages.length > 0 && (
-            <div className="project-card__block">
-              <h4 className="project-card__block-title">기획 산출물</h4>
-              <div className="project-card__docs">
-                {docImages.map((image) => (
-                  <ImagePlaceholder
-                    key={image.label}
-                    label={image.label}
-                    ratio={image.ratio}
-                    src={image.src}
-                  />
-                ))}
-              </div>
-            </div>
-          )}
-
-          {gridImages.length > 0 && (
-            <div className="project-card__block">
-              <div className="project-card__images">
-                {gridImages.map((image) => (
-                  <ImagePlaceholder
-                    key={image.label}
-                    label={image.label}
-                    ratio={image.ratio}
-                    src={image.src}
-                  />
-                ))}
-              </div>
-            </div>
-          )}
+          {project.imageGroups?.map((group) => (
+            <ImageGroup
+              key={group.title ?? group.type}
+              title={group.title}
+              type={group.type}
+              items={group.items}
+            />
+          ))}
 
           <ProjectStats stats={project.stats} />
 
