@@ -1,4 +1,4 @@
-import { useId } from "react";
+import { useEffect, useId } from "react";
 import ImagePlaceholder from "../ImagePlaceholder/ImagePlaceholder";
 import useReveal from "../../hooks/useReveal";
 import "./ProjectCard.css";
@@ -6,6 +6,12 @@ import "./ProjectCard.css";
 function ProjectCard({ project, isOpen, onToggle }) {
   const panelId = useId();
   const [ref, isVisible] = useReveal();
+
+  useEffect(() => {
+    if (isOpen) {
+      ref.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, [isOpen, ref]);
 
   const images = project.images ?? [];
   const phoneImages = images.filter((image) => image.type === "phone");
