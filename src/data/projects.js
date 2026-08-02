@@ -33,6 +33,7 @@ const projects = [
       },
     ],
     outcome: "기획부터 앱스토어·구글플레이 정식 출시까지 0→1 완주, 이후 프로젝트에도 재사용 가능한 PRD 작성 포맷과 QA 프로세스 구축",
+    processFlow: ["사업기획", "서비스기획", "외주사 선정·운영관리", "QA"],
     appLinks: {
       ios: "https://apps.apple.com/kr/app/bside-all-about-artworks/id6761592166?l=en-GB",
       android: "https://play.google.com/store/apps/details?id=art.bside.app",
@@ -70,6 +71,12 @@ const projects = [
       },
     ],
     outcome: "최종 유저 약 200명 모집, 캡처 데이터 약 10,000건 확보",
+    stats: {
+      tiles: [
+        { label: "모집 유저", value: "약 200명" },
+        { label: "캡처 데이터", value: "약 10,000건" },
+      ],
+    },
     images: [
       { label: "이벤트 포스터", ratio: "3 / 4" },
       { label: "활동가이드", ratio: "3 / 4" },
@@ -140,6 +147,7 @@ const projects = [
     outcome: "",
     expectedEffect:
       "체성분 측정 데이터를 클라우드로 연동해 효과적인 데이터 관리와 다양한 경로의 데이터 수집을 가능하게 하고, 사용자앱 리뉴얼과 센터·트레이너 전용앱 개발로 서비스 전반의 사용성과 편의 기능을 강화.",
+    processFlow: ["요구사항 분석", "서비스/화면 기획", "화면설계서 작성", "개발 산출물 검수"],
     images: [
       { label: "화면설계서", ratio: "4 / 3", type: "doc" },
       { label: "앱/관리자 최종 결과물", ratio: "4 / 3", type: "wide" },
@@ -269,6 +277,17 @@ const projects = [
       },
     ],
     outcome: "전체 안건 218건 중 206건 완료(94%), GCR 2,231건 반영",
+    stats: {
+      meter: { label: "안건 완료율", value: 206, max: 218, displayValue: "206 / 218건 (94%)" },
+      bars: {
+        title: "GCR(Graphic Change Request) 반영 현황 — 전체 2,231건",
+        items: [
+          { label: "신규", value: 588 },
+          { label: "수정", value: 1389 },
+          { label: "기타", value: 254 },
+        ],
+      },
+    },
     images: [
       { label: "운용 프로세스 다이어그램", ratio: "16 / 9", type: "wide" },
       { label: "벤치마킹 이미지", ratio: "4 / 3", type: "wide" },

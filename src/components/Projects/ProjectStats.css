@@ -1,0 +1,110 @@
+.stats-tiles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-6);
+}
+
+.stats-tile__value {
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--color-text);
+  font-variant-numeric: proportional-nums;
+}
+
+.stats-tile__label {
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+  margin-top: var(--space-1);
+}
+
+.stats-meter {
+  max-width: 420px;
+}
+
+.stats-meter__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: var(--space-2);
+}
+
+.stats-meter__label {
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+}
+
+.stats-meter__value {
+  font-size: var(--fs-small);
+  font-weight: 600;
+  color: var(--color-text);
+  font-variant-numeric: tabular-nums;
+}
+
+.stats-meter__track {
+  height: 8px;
+  border-radius: var(--radius-pill);
+  background: var(--color-border);
+  overflow: hidden;
+}
+
+.stats-meter__fill {
+  height: 100%;
+  background: var(--color-accent-strong);
+  border-radius: var(--radius-pill);
+}
+
+.stats-bars {
+  max-width: 520px;
+}
+
+.stats-bars__title {
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-3);
+}
+
+.stats-bars__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.stats-bars__row {
+  display: grid;
+  grid-template-columns: 4.5rem 1fr 4rem;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.stats-bars__label {
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+}
+
+.stats-bars__track {
+  height: 20px;
+  border-radius: 4px;
+  background: var(--color-border);
+  overflow: hidden;
+}
+
+.stats-bars__fill {
+  height: 100%;
+  background: var(--color-accent-strong);
+  border-radius: 4px;
+}
+
+.stats-bars__value {
+  font-size: var(--fs-small);
+  font-weight: 600;
+  color: var(--color-text);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 480px) {
+  .stats-bars__row {
+    grid-template-columns: 3.5rem 1fr 3rem;
+  }
+}

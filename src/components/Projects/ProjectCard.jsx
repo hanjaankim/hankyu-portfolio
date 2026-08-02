@@ -1,5 +1,7 @@
 import { useEffect, useId } from "react";
 import ImagePlaceholder from "../ImagePlaceholder/ImagePlaceholder";
+import ProcessFlow from "./ProcessFlow";
+import ProjectStats from "./ProjectStats";
 import useReveal from "../../hooks/useReveal";
 import "./ProjectCard.css";
 
@@ -98,6 +100,13 @@ function ProjectCard({ project, isOpen, onToggle }) {
             </div>
           ))}
 
+          {project.processFlow && (
+            <div className="project-card__block">
+              <h4 className="project-card__block-title">진행 프로세스</h4>
+              <ProcessFlow steps={project.processFlow} />
+            </div>
+          )}
+
           {phoneImages.length > 0 && (
             <div className="project-card__block">
               <div className="project-card__phones">
@@ -153,6 +162,8 @@ function ProjectCard({ project, isOpen, onToggle }) {
               </div>
             </div>
           )}
+
+          <ProjectStats stats={project.stats} />
 
           {project.outcome && (
             <div className="project-card__block">
