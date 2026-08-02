@@ -1,10 +1,9 @@
-import { useId, useState } from "react";
+import { useId } from "react";
 import ImagePlaceholder from "../ImagePlaceholder/ImagePlaceholder";
 import useReveal from "../../hooks/useReveal";
 import "./ProjectCard.css";
 
-function ProjectCard({ project }) {
-  const [isOpen, setIsOpen] = useState(false);
+function ProjectCard({ project, isOpen, onToggle }) {
   const panelId = useId();
   const [ref, isVisible] = useReveal();
 
@@ -25,7 +24,7 @@ function ProjectCard({ project }) {
         className="project-card__header"
         aria-expanded={isOpen}
         aria-controls={panelId}
-        onClick={() => setIsOpen((open) => !open)}
+        onClick={onToggle}
       >
         <div className="project-card__heading">
           <p className="project-card__period">{project.period}</p>
@@ -39,12 +38,39 @@ function ProjectCard({ project }) {
 
       {isOpen && (
         <div id={panelId} className="project-card__panel">
-          {project.url && (
-            <p className="project-card__url">
-              <a href={`https://${project.url}`} target="_blank" rel="noreferrer">
-                {project.url}
-              </a>
-            </p>
+          {(project.url || project.appLinks) && (
+            <div className="project-card__link-row">
+              {project.url && (
+                <a
+                  className="project-card__link-button"
+                  href={`https://${project.url}`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {project.url}
+                </a>
+              )}
+              {project.appLinks?.ios && (
+                <a
+                  className="project-card__link-button"
+                  href={project.appLinks.ios}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  App Store
+                </a>
+              )}
+              {project.appLinks?.android && (
+                <a
+                  className="project-card__link-button"
+                  href={project.appLinks.android}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Google Play
+                </a>
+              )}
+            </div>
           )}
 
           {project.background && (

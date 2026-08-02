@@ -28,17 +28,15 @@ const projects = [
         items: [
           "외주 개발사(해외) 선정 및 운영관리, Slack 협업·GitHub 스프린트 단위 진행 관리",
           "법무 전문가와 협업해 서비스 약관·컴플라이언스 대응",
-        ],
-      },
-      {
-        category: "QA",
-        items: [
-          "QA 이슈 체크리스트 포맷 설계(버그/기획변경/전달사항 구분)",
-          "이슈 약 50건 이상 처리",
+          "기획 의도 반영 여부와 제품 완성도를 점검하는 QA 체크리스트 운영(버그/기획변경/전달사항 구분), 이슈 취합 후 외주 개발사에 전달·트래킹(약 50건 이상)",
         ],
       },
     ],
-    outcome: "0→1 론칭 완수, PRD·QA 체계 구축",
+    outcome: "기획부터 앱스토어·구글플레이 정식 출시까지 0→1 완주, 이후 프로젝트에도 재사용 가능한 PRD 작성 포맷과 QA 프로세스 구축",
+    appLinks: {
+      ios: "https://apps.apple.com/kr/app/bside-all-about-artworks/id6761592166?l=en-GB",
+      android: "https://play.google.com/store/apps/details?id=art.bside.app",
+    },
     images: [
       { label: "앱 스크린샷 — 온보딩", ratio: "9 / 16", type: "phone" },
       { label: "앱 스크린샷 — 카메라", ratio: "9 / 16", type: "phone" },
@@ -102,13 +100,18 @@ const projects = [
         category: "개발",
         items: [
           "프론트엔드 개발 직접 수행, Claude Code(CLI) 활용",
+          "빠른 개발 속도와 트래픽 규모를 고려해 Next.js·Supabase로 기술 스택 선정 — AWS는 비개발자가 직접 관리하기 어려워, 직접 DB에 접근·운영할 수 있는 Supabase를 채택",
           "라우팅 구조에 맞춘 폴더 구조 직접 설계, 디자인 의도와 다르게 렌더링된 부분은 CSS 코드를 직접 확인·수정",
+          "전시·작가·작품 등 콘텐츠를 갤러리 직원이 직접 생성·편집·삭제할 수 있는 관리자 CRUD 시스템 구축",
           "백엔드 엔지니어와 개발DB/상용DB 분리 협업, Git PR 워크플로우 진행",
         ],
       },
     ],
     outcome: "기존 홈페이지+관리자페이지를 자체 설계 시스템으로 완전 대체",
-    images: [{ label: "Before(cafe24) / After(Next.js) 비교 스크린샷", ratio: "16 / 9", type: "wide" }],
+    images: [
+      { label: "Before(cafe24) / After(Next.js) 비교 스크린샷", ratio: "16 / 9", type: "wide" },
+      { label: "관리자 CRUD 화면 (전시·작가·작품 관리)", ratio: "16 / 9", type: "wide" },
+    ],
   },
   {
     id: "selvas-accuniq-cloud",
