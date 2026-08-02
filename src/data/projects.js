@@ -176,8 +176,18 @@ const projects = [
     expectedEffect:
       "기존 UI 및 메뉴 구조를 개선해 사용성과 사용자 경험을 높이고, 트레이너·강사의 업무 효율 증대를 기대.",
     images: [
-      { label: "Wireframe / Prototype", ratio: "9 / 16", type: "doc" },
-      { label: "최종 앱 결과물", ratio: "9 / 16", type: "phone" },
+      {
+        label: "Wireframe / Prototype",
+        ratio: "1288 / 1080",
+        type: "doc",
+        src: "/images/selvas-onfit-manager/02-wirefram-prototype/wireframe-prototype.png",
+      },
+      {
+        label: "최종 앱 결과물",
+        ratio: "960 / 1080",
+        type: "wide",
+        src: "/images/selvas-onfit-manager/01-final-app/final-app.png",
+      },
     ],
   },
   {

@@ -103,7 +103,7 @@ function ProjectCard({ project, isOpen, onToggle }) {
               <div className="project-card__phones">
                 {phoneImages.map((image) => (
                   <div className="project-card__phone-frame" key={image.label}>
-                    <ImagePlaceholder label={image.label} ratio={image.ratio} />
+                    <ImagePlaceholder label={image.label} ratio={image.ratio} src={image.src} />
                   </div>
                 ))}
               </div>
@@ -113,7 +113,12 @@ function ProjectCard({ project, isOpen, onToggle }) {
           {wideImages.length > 0 && (
             <div className="project-card__block project-card__wides">
               {wideImages.map((image) => (
-                <ImagePlaceholder key={image.label} label={image.label} ratio={image.ratio} />
+                <ImagePlaceholder
+                  key={image.label}
+                  label={image.label}
+                  ratio={image.ratio}
+                  src={image.src}
+                />
               ))}
             </div>
           )}
@@ -123,7 +128,12 @@ function ProjectCard({ project, isOpen, onToggle }) {
               <h4 className="project-card__block-title">기획 산출물</h4>
               <div className="project-card__docs">
                 {docImages.map((image) => (
-                  <ImagePlaceholder key={image.label} label={image.label} ratio={image.ratio} />
+                  <ImagePlaceholder
+                    key={image.label}
+                    label={image.label}
+                    ratio={image.ratio}
+                    src={image.src}
+                  />
                 ))}
               </div>
             </div>
@@ -137,6 +147,7 @@ function ProjectCard({ project, isOpen, onToggle }) {
                     key={image.label}
                     label={image.label}
                     ratio={image.ratio}
+                    src={image.src}
                   />
                 ))}
               </div>

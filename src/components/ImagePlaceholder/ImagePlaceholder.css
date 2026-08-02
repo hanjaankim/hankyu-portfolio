@@ -9,6 +9,11 @@
   overflow: hidden;
 }
 
+.image-placeholder--real {
+  border-style: solid;
+  object-fit: cover;
+}
+
 .image-placeholder__label {
   padding: var(--space-3);
   text-align: center;

@@ -1,11 +1,23 @@
 import "./ImagePlaceholder.css";
 
 /**
- * Reusable stand-in for a future image/screenshot.
- * Swap out later by rendering an <img> in its place — the label prop
- * documents what should go there.
+ * Reusable stand-in for a future image/screenshot. Once a project
+ * supplies a `src`, this renders the real image instead — the label
+ * prop still documents what belongs there and becomes the alt text.
  */
-function ImagePlaceholder({ label, ratio = "4 / 3", className = "" }) {
+function ImagePlaceholder({ label, ratio = "4 / 3", src, className = "" }) {
+  if (src) {
+    return (
+      <img
+        className={`image-placeholder image-placeholder--real ${className}`}
+        style={{ aspectRatio: ratio }}
+        src={src}
+        alt={label}
+        loading="lazy"
+      />
+    );
+  }
+
   return (
     <div
       className={`image-placeholder ${className}`}
