@@ -32,7 +32,7 @@ function About() {
         <h2 className="section-title">경력</h2>
         <p className="about__intro">
           다양한 산업 도메인에서 서비스기획 업무를 수행해왔고, 최근에는 AI 도구를 활용해
-          프론트엔드 개발과 배포까지 직접 수행하고 있습니다.
+          프론트엔드 개발과 배포를 직접 해보며 역량을 넓혔습니다.
         </p>
 
         <ul className="about__timeline">
