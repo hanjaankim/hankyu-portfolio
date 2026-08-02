@@ -8,7 +8,7 @@ function Hero() {
         <span className="hero__blob hero__blob--b" />
       </div>
 
-      <div className="hero__inner">
+      <div className="container hero__inner">
         <p className="hero__eyebrow">2026 · Service Planner</p>
 
         <div className="hero__display">

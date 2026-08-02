@@ -65,12 +65,6 @@
 }
 
 .hero__inner {
-  /* Intentionally not using .container here: on wide viewports a
-     centered 1080px column reads as the whole hero floating in the
-     middle of the screen. Anchoring to the same left padding without
-     a max-width keeps it flush with the true edge instead. */
-  width: 100%;
-  padding-inline: var(--content-padding);
   position: relative;
   z-index: 1;
   display: flex;
