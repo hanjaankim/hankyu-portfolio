@@ -41,6 +41,28 @@
   border-radius: 12px;
 }
 
+/* Unframed screens: the source image is already a composed shot (status
+   bar, browser chrome, etc.), so we don't add a second device frame.
+   Fixed height + auto width keeps a tall phone crop and a wide web
+   screenshot at a comparable visual weight in the same row. */
+.image-group__plain-screen {
+  flex: 0 0 auto;
+  height: 340px;
+  margin: 0;
+}
+
+.image-group__plain-screen .image-placeholder {
+  width: auto;
+  height: 100%;
+  border-radius: var(--radius-sm);
+}
+
+.image-group__plain-screen figcaption {
+  margin-top: var(--space-2);
+  font-size: var(--fs-tiny);
+  color: var(--color-text-faint);
+}
+
 /* Planning artifacts (IA, wireframes, spec docs): a legible grid — large
    enough to actually read the diagram/document, not a token thumbnail. */
 .image-group--artifacts {
@@ -69,4 +91,29 @@
   .image-group--ops {
     grid-template-columns: 1fr;
   }
+}
+
+/* Wraps multiple sub-sections (e.g. "structure design" + "schedule") in
+   one bordered container so they read as one deliverable set instead of
+   unrelated blocks stacked back to back. */
+.image-group-set {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  padding: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.image-group-set__subtitle {
+  font-size: var(--fs-tiny);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-text-faint);
+  margin-bottom: var(--space-3);
+}
+
+.image-group-set__section .project-card__block {
+  margin: 0;
 }

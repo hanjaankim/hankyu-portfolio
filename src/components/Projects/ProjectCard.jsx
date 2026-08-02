@@ -1,4 +1,5 @@
 import { useEffect, useId } from "react";
+import IATable from "./IATable";
 import ImageGroup from "./ImageGroup";
 import ProjectStats from "./ProjectStats";
 import useReveal from "../../hooks/useReveal";
@@ -93,14 +94,24 @@ function ProjectCard({ project, isOpen, onToggle }) {
             </div>
           ))}
 
-          {project.imageGroups?.map((group) => (
-            <ImageGroup
-              key={group.title ?? group.type}
-              title={group.title}
-              type={group.type}
-              items={group.items}
-            />
-          ))}
+          {project.imageGroups?.map((group) =>
+            group.type === "ia-table" ? (
+              <div className="project-card__block" key={group.title}>
+                {group.title && <h4 className="project-card__block-title">{group.title}</h4>}
+                <IATable rows={group.rows} />
+              </div>
+            ) : (
+              <ImageGroup
+                key={group.title ?? group.type}
+                title={group.title}
+                type={group.type}
+                items={group.items}
+                framed={group.framed}
+                showCaption={group.showCaption}
+                sections={group.sections}
+              />
+            )
+          )}
 
           <ProjectStats stats={project.stats} />
 

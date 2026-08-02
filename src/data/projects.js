@@ -41,53 +41,61 @@ const projects = [
       {
         title: "제품 화면",
         type: "screens",
+        framed: false,
+        showCaption: true,
         items: [
           {
-            label: "온보딩 — 동네 선택",
+            label: "Onboarding",
             ratio: "715 / 1452",
             src: "/images/bside-app-launch/01-AppScreen/screen-onboarding.png",
           },
           {
-            label: "홈 — 캡처·피드",
+            label: "Home",
             ratio: "727 / 1464",
             src: "/images/bside-app-launch/01-AppScreen/screen-home.png",
           },
           {
-            label: "카메라 — 작품 캡처",
+            label: "Capture",
             ratio: "715 / 1452",
             src: "/images/bside-app-launch/01-AppScreen/screen-capture.png",
           },
           {
-            label: "마이페이지",
+            label: "My Page",
             ratio: "715 / 1452",
             src: "/images/bside-app-launch/01-AppScreen/screen-mypage.png",
           },
         ],
       },
       {
-        title: "구조 설계",
-        type: "wide",
-        items: [
+        title: "기획·관리 산출물",
+        type: "group",
+        sections: [
           {
-            label: "정보구조도(IA)",
-            ratio: "2162 / 1066",
-            src: "/images/bside-app-launch/02-IA/ia-flowchart.png",
+            subtitle: "구조 설계",
+            type: "wide",
+            items: [
+              {
+                label: "정보구조도(IA)",
+                ratio: "2162 / 1066",
+                src: "/images/bside-app-launch/02-IA/ia-flowchart.png",
+              },
+              {
+                label: "서비스 시스템 아키텍처",
+                ratio: "1840 / 836",
+                src: "/images/bside-app-launch/03-AppFlow/appflow-diagram.png",
+              },
+            ],
           },
           {
-            label: "서비스 시스템 아키텍처",
-            ratio: "1840 / 836",
-            src: "/images/bside-app-launch/03-AppFlow/appflow-diagram.png",
-          },
-        ],
-      },
-      {
-        title: "일정 관리",
-        type: "wide",
-        items: [
-          {
-            label: "스프린트 타임라인(Gantt)",
-            ratio: "1920 / 1080",
-            src: "/images/bside-app-launch/04-Timeline-GANT-Chart/gantt-chart.png",
+            subtitle: "일정 관리",
+            type: "wide",
+            items: [
+              {
+                label: "스프린트 타임라인(Gantt)",
+                ratio: "1920 / 1080",
+                src: "/images/bside-app-launch/04-Timeline-GANT-Chart/gantt-chart.png",
+              },
+            ],
           },
         ],
       },
@@ -119,12 +127,6 @@ const projects = [
       },
     ],
     outcome: "최종 유저 약 200명 모집, 캡처 데이터 약 10,000건 확보",
-    stats: {
-      tiles: [
-        { label: "모집 유저", value: "약 200명" },
-        { label: "캡처 데이터", value: "약 10,000건" },
-      ],
-    },
     imageGroups: [
       {
         title: "실행 자료",
@@ -185,17 +187,19 @@ const projects = [
     imageGroups: [
       {
         title: "제품 화면",
-        type: "wide",
+        type: "screens",
+        framed: false,
+        showCaption: true,
         items: [
-          {
-            label: "아티스트 리스트",
-            ratio: "2012 / 1419",
-            src: "/images/pipegallery-renewal/1-webscreen/ArtistList.png",
-          },
           {
             label: "홈 — 전시 소개",
             ratio: "2011 / 1419",
             src: "/images/pipegallery-renewal/1-webscreen/homescreen.png",
+          },
+          {
+            label: "아티스트 리스트",
+            ratio: "2012 / 1419",
+            src: "/images/pipegallery-renewal/1-webscreen/ArtistList.png",
           },
         ],
       },
@@ -280,6 +284,7 @@ const projects = [
       {
         title: "기획 산출물 — 화면설계서",
         type: "artifacts",
+        showCaption: false,
         items: [
           {
             label: "화면설계서 — 칼로리 가이드 생성",
@@ -350,6 +355,8 @@ const projects = [
       {
         title: "제품 화면",
         type: "screens",
+        framed: true,
+        showCaption: false,
         items: [
           {
             label: "스케줄",
@@ -380,7 +387,9 @@ const projects = [
       },
       {
         title: "기획 산출물 — Wireframe",
-        type: "artifacts",
+        type: "screens",
+        framed: true,
+        showCaption: false,
         items: [
           {
             label: "Wireframe — 스케줄",
@@ -499,11 +508,6 @@ const projects = [
             src: "/images/selvas-born-this-way/2-LevelSystemDesignPlanning/level-system-diagram.png",
           },
           {
-            label: "정보구조도(IA)",
-            ratio: "1057 / 2174",
-            src: "/images/selvas-born-this-way/3-IA/ia-table.png",
-          },
-          {
             label: "화면설계서 — 햄버거 메뉴",
             ratio: "1008 / 565",
             src: "/images/selvas-born-this-way/4-spec/spec-01.png",
@@ -513,6 +517,25 @@ const projects = [
             ratio: "1014 / 565",
             src: "/images/selvas-born-this-way/4-spec/spec-02.png",
           },
+        ],
+      },
+      {
+        title: "정보구조도(IA)",
+        type: "ia-table",
+        rows: [
+          { category: "가입/로그인", sub: "회원가입/로그인", items: ["개인정보입력", "카카오연동", "패스워드 변경주기 알림", "휴면 회원 정보 알림", "탈퇴 회원 정보 관리", "로그인", "아이디 패스워드 찾기"] },
+          { category: "서비스 소개", sub: "소개페이지", items: [] },
+          { category: "검체 채취 / 키트 반송", sub: "검체 채취", items: ["키트 구매 여부 확인", "바코드(QR코드) 인식", "유전자 검사 동의"] },
+          { category: "검체 채취 / 키트 반송", sub: "키트 반송", items: ["키트 반송"] },
+          { category: "마이데이터", sub: "유전자 검사 현황", items: ["검사 키트 구매 현황", "PDF 원본 리포트 다운로드"] },
+          { category: "마이데이터", sub: "표현형 검사 현황", items: ["영양소", "피부", "건강기록", "스크래핑", "건강기록 히스토리", "피트니스"] },
+          { category: "마이데이터", sub: "영양제 밸런스체크", items: ["영양제 검색", "관심 영역 설정", "영양제 밸런스 체크 결과"] },
+          { category: "리포트", sub: "영양소", items: ["종합 리포트", "상세 리포트", "팝업 리포트", "처방문"] },
+          { category: "리포트", sub: "피부/두피", items: ["종합 리포트", "상세 리포트", "팝업 리포트", "PC웹 결과 화면", "처방문"] },
+          { category: "리포트", sub: "피트니스", items: ["종합 리포트", "상세 리포트", "팝업 리포트"] },
+          { category: "리포트", sub: "건강기록", items: ["종합 리포트", "상세 리포트", "팝업 리포트", "처방문"] },
+          { category: "리포트", sub: "개인특성", items: ["종합 리포트", "상세 리포트", "팝업 리포트"] },
+          { category: "챌린지", sub: "챌린지", items: ["건강 습관 챌린지 목록", "영양제 섭취 챌린지", "챌린지 현황", "챌린지 기록"] },
         ],
       },
     ],
@@ -547,6 +570,8 @@ const projects = [
       {
         title: "제품 화면",
         type: "screens",
+        framed: true,
+        showCaption: true,
         items: [
           {
             label: "홈 화면",
@@ -571,31 +596,19 @@ const projects = [
         ],
       },
       {
-        title: "구조 설계",
-        type: "wide",
+        title: "기획·관리 산출물",
+        type: "artifacts",
         items: [
           {
             label: "정보구조도(IA)",
             ratio: "2298 / 1264",
             src: "/images/selvas-carenow-3/2-InformationArchitecture/ia-diagram.png",
           },
-        ],
-      },
-      {
-        title: "관리자 화면",
-        type: "wide",
-        items: [
           {
             label: "관리자 — 회원 관리",
             ratio: "1106 / 619",
             src: "/images/selvas-carenow-3/3-adminWeb/admin-members.png",
           },
-        ],
-      },
-      {
-        title: "기획 산출물 — 화면설계서",
-        type: "artifacts",
-        items: [
           {
             label: "화면설계서 표지",
             ratio: "471 / 264",
@@ -635,7 +648,8 @@ const projects = [
         items: ["클러스터 표준그래픽 화면 기획 및 배포 운용"],
       },
     ],
-    outcome: "전체 안건 218건 중 206건 완료(94%), GCR 2,231건 반영",
+    outcome:
+      "안건 218건 중 206건 완료(94%), GCR(그래픽 변경요청) 2,231건 반영(신규 588/수정 1,389/기타 254)",
     stats: {
       meter: { label: "안건 완료율", value: 206, max: 218, displayValue: "206 / 218건 (94%)" },
       bars: {
@@ -647,16 +661,6 @@ const projects = [
         ],
       },
     },
-    imageGroups: [
-      {
-        title: "운용 자료",
-        type: "wide",
-        items: [
-          { label: "운용 프로세스 다이어그램", ratio: "16 / 9" },
-          { label: "벤치마킹 이미지", ratio: "4 / 3" },
-        ],
-      },
-    ],
   },
 ];
 
