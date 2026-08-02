@@ -64,6 +64,11 @@
   width: auto;
   height: 420px;
   border-radius: var(--radius-sm);
+  /* The source image is already a fully composed shot (its own device
+     frame, its own background) — the shared placeholder border/background
+     would just double it up as a visible box around the mockup. */
+  border: none;
+  background: none;
 }
 
 .image-group__plain-screen figcaption {
@@ -86,12 +91,18 @@
   gap: var(--space-4);
 }
 
-/* A single large reference: gantt charts, IA diagrams, admin screens —
-   full panel width. */
+/* A single large reference: gantt charts, IA diagrams, admin screens.
+   Capped rather than true full-bleed — on a wide monitor the panel itself
+   can be over 1000px, and letting a diagram stretch to fill all of that
+   makes it dominate the card; capping keeps it large but not oversized. */
 .image-group--wide {
   display: flex;
   flex-direction: column;
   gap: var(--space-4);
+}
+
+.image-group--wide .image-group__artifact {
+  max-width: 720px;
 }
 
 /* Operational material: posters, docs, forms — plain grid, medium size. */

@@ -13,6 +13,20 @@ function Tiles({ items }) {
   );
 }
 
+function Cards({ items }) {
+  return (
+    <div className="stats-cards">
+      {items.map((item) => (
+        <div className="stats-card" key={item.label}>
+          <p className="stats-card__label">{item.label}</p>
+          <p className="stats-card__value">{item.value}</p>
+          {item.description && <p className="stats-card__description">{item.description}</p>}
+        </div>
+      ))}
+    </div>
+  );
+}
+
 function Meter({ label, value, max, displayValue }) {
   const percent = Math.round((value / max) * 100);
   return (
@@ -57,6 +71,7 @@ function ProjectStats({ stats }) {
   return (
     <div className="project-card__block">
       {stats.tiles && <Tiles items={stats.tiles} />}
+      {stats.cards && <Cards items={stats.cards} />}
       {stats.meter && <Meter {...stats.meter} />}
       {stats.bars && <Bars {...stats.bars} />}
     </div>

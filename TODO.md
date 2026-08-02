@@ -96,3 +96,10 @@
 - [x] "framed:false" 화면들의 세로 스크롤·크기 축소 버그 + d-flux 차트 재검토
   → 원인: `.image-group__plain-screen`에 `height:340px`를 figure 자체에 고정해두고 그 안에 이미지(height:100%)+캡션을 같이 넣어서, 캡션이 붙는 순간 실제 콘텐츠 높이가 프레임을 초과해 오버플로우가 발생(세로 스크롤처럼 보인 원인). 케어나우는 phone-frame(`framed:true`, height 자동)을 써서 이 버그가 없었던 것 — 프롬프트 문제가 아니라 두 방식(`framed:true`/`false`)의 구현 자체가 달랐던 것이 원인. height 고정을 figure가 아니라 이미지 자체로 옮기고, 값도 340px→420px로 키워 phone-frame과 비슷한 크기감으로 조정. `.image-group__caption`(phone-frame용 캡션) 스타일도 누락되어 있던 것을 추가.
   → d-flux: 안건 완료율 미터 + GCR 신규/수정/기타 막대그래프를 모두 제거. 서로 다른 성격의 지표(비율 vs 건수 분해)를 억지로 하나의 차트로 묶을 마땅한 형태가 없다고 판단해 숫자(outcome 텍스트)만으로 표현.
+
+- [x] 디자인 마무리 5건
+  → bside 앱 제품화면: 이미지 자체가 이미 완성된 폰 목업이라 코드 프레임(placeholder의 기본 border+background)이 이중으로 덧씌워지던 문제 수정 — unframed screens에는 border/background 제거.
+  → bside 앱 기획·관리 산출물(IA/AppFlow/Gantt): 큰 모니터 전체화면에서 카드 폭(~1080px)까지 꽉 차 과도하게 커 보이던 문제 — `wide` 타입 이미지에 `max-width:720px` 상한 추가.
+  → 파이프갤러리 관리자 화면: 제품 화면과 크기가 안 맞던 것을 동일한 `screens`(고정 높이 420px) 타입으로 통일.
+  → Born This Way IA: 실제 메뉴 구조 위계보다 단순한 요약처럼 보여 전문성이 떨어진다는 피드백으로, 지난번에 추가한 IATable 섹션과 컴포넌트를 완전히 제거.
+  → d-flux 성과: 레퍼런스(다크 카드 + 라벨 + 큰 숫자 + 설명 문구) 참고해 `ProjectStats`에 카드형(`cards`) 타입 신설. 완료율 94% / 신규 588건 / 수정 1,389건 3장의 카드로 표현(기타 254건은 outcome 텍스트에만 유지).
