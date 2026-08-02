@@ -149,6 +149,14 @@
   gap: var(--space-3);
 }
 
+.project-card__docs {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: var(--space-2);
+  max-width: 480px;
+  opacity: 0.85;
+}
+
 .project-card__phones {
   display: flex;
   gap: var(--space-4);

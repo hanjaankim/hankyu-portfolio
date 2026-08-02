@@ -16,6 +16,7 @@ function ProjectCard({ project, isOpen, onToggle }) {
   const images = project.images ?? [];
   const phoneImages = images.filter((image) => image.type === "phone");
   const wideImages = images.filter((image) => image.type === "wide");
+  const docImages = images.filter((image) => image.type === "doc");
   const gridImages = images.filter((image) => !image.type);
 
   return (
@@ -114,6 +115,17 @@ function ProjectCard({ project, isOpen, onToggle }) {
               {wideImages.map((image) => (
                 <ImagePlaceholder key={image.label} label={image.label} ratio={image.ratio} />
               ))}
+            </div>
+          )}
+
+          {docImages.length > 0 && (
+            <div className="project-card__block">
+              <h4 className="project-card__block-title">기획 산출물</h4>
+              <div className="project-card__docs">
+                {docImages.map((image) => (
+                  <ImagePlaceholder key={image.label} label={image.label} ratio={image.ratio} />
+                ))}
+              </div>
             </div>
           )}
 

@@ -141,8 +141,8 @@ const projects = [
     expectedEffect:
       "체성분 측정 데이터를 클라우드로 연동해 효과적인 데이터 관리와 다양한 경로의 데이터 수집을 가능하게 하고, 사용자앱 리뉴얼과 센터·트레이너 전용앱 개발로 서비스 전반의 사용성과 편의 기능을 강화.",
     images: [
-      { label: "화면설계서", ratio: "4 / 3" },
-      { label: "앱/관리자 최종 결과물", ratio: "4 / 3" },
+      { label: "화면설계서", ratio: "4 / 3", type: "doc" },
+      { label: "앱/관리자 최종 결과물", ratio: "4 / 3", type: "wide" },
     ],
   },
   {
@@ -176,7 +176,7 @@ const projects = [
     expectedEffect:
       "기존 UI 및 메뉴 구조를 개선해 사용성과 사용자 경험을 높이고, 트레이너·강사의 업무 효율 증대를 기대.",
     images: [
-      { label: "Wireframe / Prototype", ratio: "9 / 16", type: "phone" },
+      { label: "Wireframe / Prototype", ratio: "9 / 16", type: "doc" },
       { label: "최종 앱 결과물", ratio: "9 / 16", type: "phone" },
     ],
   },
@@ -206,7 +206,7 @@ const projects = [
     ],
     outcome: "",
     images: [
-      { label: "정보구조도", ratio: "4 / 3", type: "wide" },
+      { label: "정보구조도", ratio: "4 / 3", type: "doc" },
       { label: "최종 앱 결과물", ratio: "9 / 16", type: "phone" },
     ],
   },
