@@ -315,7 +315,7 @@ const projects = [
         type: "wide",
         items: [
           {
-            label: "프로젝트 타임라인(Gantt)",
+            label: "프로젝트 타임라인(WBS)",
             ratio: "2090 / 485",
             src: "/images/selvas-accuniq-cloud/1-gantt-chart/gantt-chart.png",
           },
@@ -510,12 +510,12 @@ const projects = [
             src: "/images/selvas-born-this-way/2-LevelSystemDesignPlanning/level-system-diagram.png",
           },
           {
-            label: "화면설계서 — 햄버거 메뉴",
+            label: "화면설계서",
             ratio: "1008 / 565",
             src: "/images/selvas-born-this-way/4-spec/spec-01.png",
           },
           {
-            label: "화면설계서 — 영양제 분석",
+            label: "화면설계서",
             ratio: "1014 / 565",
             src: "/images/selvas-born-this-way/4-spec/spec-02.png",
           },
@@ -593,7 +593,7 @@ const projects = [
             src: "/images/selvas-carenow-3/3-adminWeb/admin-members.png",
           },
           {
-            label: "화면설계서 표지",
+            label: "화면설계서",
             ratio: "471 / 264",
             src: "/images/selvas-carenow-3/4-spec/spec-cover.png",
           },
