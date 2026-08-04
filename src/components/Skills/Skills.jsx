@@ -18,12 +18,12 @@ function Skills() {
         >
           <p className="skills__highlight-eyebrow">AI 활용 개발</p>
           <h3 className="skills__highlight-title">
-            Claude Code(CLI)로 기획자가 직접 기획·디자인·개발 가능합니다
+            AI 에이전트로 기획자가 직접 기획·디자인·개발까지 수행합니다
           </h3>
           <p className="skills__highlight-desc">
-            Claude Code(CLI)를 활용해 React/Next.js 기반 서비스를 직접 개발하고 배포까지
-            경험하였습니다. 지금 보고 계신 이 포트폴리오 사이트 역시 Claude Code로 디자인·개발·배포까지
-            기획하여 만들어진 결과물입니다.
+            AI 코딩 에이전트(Claude Code 등)를 활용해 React/Next.js 기반 서비스를 기획부터
+            디자인, 개발, 배포까지 직접 진행합니다. 지금 보고 계신 이 포트폴리오 사이트 역시
+            AI 에이전트와 협업해 기획·디자인·개발·배포까지 완성한 결과물입니다.
           </p>
         </div>
 
