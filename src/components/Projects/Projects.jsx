@@ -1,9 +1,9 @@
 import { useState } from "react";
-import projects from "../../data/projects";
+import defaultProjects from "../../data/projects";
 import ProjectCard from "./ProjectCard";
 import "./Projects.css";
 
-function Projects() {
+function Projects({ projects = defaultProjects, display = {} }) {
   const [openId, setOpenId] = useState(null);
 
   const toggleProject = (id) => {
@@ -23,6 +23,7 @@ function Projects() {
               project={project}
               isOpen={openId === project.id}
               onToggle={() => toggleProject(project.id)}
+              display={display}
             />
           ))}
         </ul>

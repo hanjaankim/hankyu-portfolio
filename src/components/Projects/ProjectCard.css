@@ -149,6 +149,51 @@
   color: var(--color-accent-strong);
 }
 
+.project-card__goal {
+  font-size: var(--fs-body);
+  font-weight: 600;
+  color: var(--color-text);
+  max-width: 68ch;
+}
+
+.project-card__role-groups {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.project-card__role-category {
+  font-size: var(--fs-small);
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: var(--space-2);
+}
+
+.project-card__outcome-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  color: var(--color-accent-strong);
+}
+
+.project-card__outcome-list li {
+  padding-left: 1rem;
+  position: relative;
+}
+
+.project-card__outcome-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
 @media (max-width: 640px) {
   .project-card__header {
     padding: var(--space-3) var(--space-4);

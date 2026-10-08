@@ -1,0 +1,67 @@
+.contribution {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.contribution__row {
+  display: grid;
+  grid-template-columns: 8.5rem minmax(140px, 220px) 1fr;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: var(--fs-small);
+}
+
+.contribution__area {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.contribution__bar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.contribution__track {
+  flex: 1;
+  height: 6px;
+  border-radius: var(--radius-pill);
+  background: var(--color-surface-raised);
+  overflow: hidden;
+}
+
+.contribution__fill {
+  height: 100%;
+  border-radius: inherit;
+  background: var(--color-accent-strong);
+}
+
+.contribution__value {
+  min-width: 2.75rem;
+  text-align: right;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-accent-strong);
+}
+
+.contribution__value--collab {
+  min-width: 0;
+  padding: 0.1rem 0.6rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-tiny);
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.contribution__note {
+  color: var(--color-text-muted);
+}
+
+@media (max-width: 640px) {
+  .contribution__row {
+    grid-template-columns: 1fr;
+    gap: var(--space-1);
+  }
+}

@@ -1,10 +1,11 @@
 import { useEffect, useId } from "react";
 import ImageGroup from "./ImageGroup";
 import ProjectStats from "./ProjectStats";
+import Contribution from "./Contribution";
 import useReveal from "../../hooks/useReveal";
 import "./ProjectCard.css";
 
-function ProjectCard({ project, isOpen, onToggle }) {
+function ProjectCard({ project, isOpen, onToggle, display = {} }) {
   const panelId = useId();
   const [ref, isVisible] = useReveal();
 
@@ -75,6 +76,13 @@ function ProjectCard({ project, isOpen, onToggle }) {
             </div>
           )}
 
+          {display.goal && project.goal && (
+            <div className="project-card__block">
+              <h4 className="project-card__block-title">목표</h4>
+              <p className="project-card__goal">{project.goal}</p>
+            </div>
+          )}
+
           {project.background && (
             <div className="project-card__block">
               <h4 className="project-card__block-title">배경</h4>
@@ -82,16 +90,36 @@ function ProjectCard({ project, isOpen, onToggle }) {
             </div>
           )}
 
-          {project.roleGroups?.map((group) => (
-            <div className="project-card__block" key={group.category}>
-              <h4 className="project-card__block-title">{group.category}</h4>
-              <ul className="project-card__details">
-                {group.items.map((item) => (
-                  <li key={item}>{item}</li>
+          {display.roleHeading ? (
+            <div className="project-card__block">
+              <h4 className="project-card__block-title">담당 역할</h4>
+              <div className="project-card__role-groups">
+                {project.roleGroups?.map((group) => (
+                  <div key={group.category}>
+                    <p className="project-card__role-category">{group.category}</p>
+                    <ul className="project-card__details">
+                      {group.items.map((item) => (
+                        <li key={item}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
                 ))}
-              </ul>
+              </div>
             </div>
-          ))}
+          ) : (
+            project.roleGroups?.map((group) => (
+              <div className="project-card__block" key={group.category}>
+                <h4 className="project-card__block-title">{group.category}</h4>
+                <ul className="project-card__details">
+                  {group.items.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            ))
+          )}
+
+          {display.contribution && <Contribution items={project.contribution} />}
 
           {project.imageGroups?.map((group) => (
             <ImageGroup
@@ -110,7 +138,15 @@ function ProjectCard({ project, isOpen, onToggle }) {
           {project.outcome && (
             <div className="project-card__block">
               <h4 className="project-card__block-title">성과</h4>
-              <p className="project-card__outcome">{project.outcome}</p>
+              {Array.isArray(project.outcome) ? (
+                <ul className="project-card__outcome-list">
+                  {project.outcome.map((line) => (
+                    <li key={line}>{line}</li>
+                  ))}
+                </ul>
+              ) : (
+                <p className="project-card__outcome">{project.outcome}</p>
+              )}
             </div>
           )}
 
