@@ -1,0 +1,407 @@
+@page {
+  size: A4;
+  margin: 16mm 15mm;
+}
+
+.print {
+  --print-text: #1a1a18;
+  --print-muted: #55554f;
+  --print-faint: #8a8a82;
+  --print-line: #e2e1dc;
+  --print-accent: #0077cc;
+
+  color: var(--print-text);
+  background: #ffffff;
+  font-size: 10pt;
+  line-height: 1.6;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.print a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.print-page {
+  break-after: page;
+}
+
+.print-page:last-child {
+  break-after: auto;
+}
+
+/* On screen, show the document as a centered sheet so it can be checked before printing. */
+@media screen {
+  .print {
+    max-width: 180mm;
+    margin: 0 auto;
+    padding: 16mm 0;
+  }
+
+  .print-page + .print-page {
+    margin-top: 16mm;
+    padding-top: 16mm;
+    border-top: 1px dashed var(--print-line);
+  }
+}
+
+/* Cover */
+.print-cover {
+  min-height: 250mm;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.print-cover__eyebrow {
+  font-size: 9pt;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--print-faint);
+}
+
+.print-cover__name {
+  font-size: 64pt;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: var(--print-text);
+}
+
+.print-cover__name-en {
+  margin-top: 4mm;
+  font-size: 20pt;
+  color: var(--print-muted);
+}
+
+.print-cover__tagline {
+  font-size: 15pt;
+  font-weight: 600;
+  max-width: 120mm;
+  border-top: 2px solid var(--print-text);
+  padding-top: 6mm;
+}
+
+.print-cover__contact {
+  display: grid;
+  grid-template-columns: 18mm 1fr;
+  row-gap: 1.5mm;
+  margin: 0;
+  font-size: 10pt;
+}
+
+.print-cover__contact dt {
+  color: var(--print-faint);
+}
+
+.print-cover__contact dd {
+  margin: 0;
+}
+
+/* Shared text */
+.print-section-title {
+  font-size: 20pt;
+  font-weight: 700;
+  margin-bottom: 5mm;
+  color: var(--print-text);
+}
+
+.print-section-title--spaced {
+  margin-top: 10mm;
+}
+
+.print-text {
+  color: var(--print-muted);
+}
+
+.print-text--strong {
+  color: var(--print-text);
+  font-weight: 600;
+}
+
+.print-text--outcome {
+  color: var(--print-accent);
+  font-weight: 600;
+}
+
+.print-keep,
+.print-block--images,
+.print-subgroup {
+  break-inside: avoid;
+}
+
+.print-block__title,
+.print-subgroup__title,
+.print-section-title {
+  break-after: avoid;
+}
+
+.print-list {
+  margin: 0;
+  padding-left: 4.5mm;
+  list-style: disc;
+  color: var(--print-muted);
+}
+
+.print-list li + li {
+  margin-top: 1mm;
+}
+
+.print-list--outcome {
+  color: var(--print-accent);
+  font-weight: 600;
+}
+
+/* Experience */
+.print-timeline {
+  list-style: none;
+  margin: 6mm 0 0;
+  padding: 0;
+}
+
+.print-timeline__item {
+  display: grid;
+  grid-template-columns: 36mm 1fr;
+  gap: 4mm;
+  padding: 4mm 0;
+  border-top: 1px solid var(--print-line);
+  break-inside: avoid;
+}
+
+.print-timeline__period {
+  font-size: 9pt;
+  color: var(--print-faint);
+  font-variant-numeric: tabular-nums;
+}
+
+.print-timeline__org {
+  font-size: 12pt;
+  font-weight: 700;
+}
+
+.print-timeline__desc {
+  font-size: 9pt;
+  color: var(--print-faint);
+  margin-bottom: 1.5mm;
+}
+
+/* Skills */
+.print-highlight {
+  padding: 5mm;
+  border: 1px solid var(--print-accent);
+  border-radius: 3mm;
+  margin-bottom: 6mm;
+  break-inside: avoid;
+}
+
+.print-highlight__title {
+  font-size: 12pt;
+  font-weight: 700;
+  margin-bottom: 2mm;
+}
+
+.print-skills {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6mm;
+}
+
+.print-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5mm;
+}
+
+.print-tags span {
+  padding: 0.6mm 2.6mm;
+  border: 1px solid var(--print-line);
+  border-radius: 999px;
+  font-size: 9pt;
+  color: var(--print-muted);
+}
+
+/* Project index */
+.print-index {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.print-index li {
+  display: grid;
+  grid-template-columns: 10mm 1fr 52mm;
+  gap: 4mm;
+  padding: 4mm 0;
+  border-top: 1px solid var(--print-line);
+}
+
+.print-index__num {
+  font-weight: 700;
+  color: var(--print-accent);
+}
+
+.print-index__title {
+  display: block;
+  font-weight: 700;
+}
+
+.print-index__summary {
+  display: block;
+  font-size: 9pt;
+  color: var(--print-muted);
+}
+
+.print-index__period {
+  white-space: nowrap;
+  font-size: 9pt;
+  color: var(--print-faint);
+  text-align: right;
+}
+
+/* Project page */
+.print-project__header {
+  padding-bottom: 5mm;
+  margin-bottom: 5mm;
+  border-bottom: 2px solid var(--print-text);
+}
+
+.print-project__index {
+  font-size: 9pt;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--print-accent);
+}
+
+.print-project__title {
+  font-size: 18pt;
+  font-weight: 700;
+  margin: 1mm 0 1.5mm;
+  color: var(--print-text);
+}
+
+.print-project__meta {
+  font-size: 9pt;
+  color: var(--print-faint);
+}
+
+.print-project__summary {
+  margin-top: 1.5mm;
+  color: var(--print-muted);
+}
+
+.print-project__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2mm;
+  margin-top: 3mm;
+}
+
+.print-project__links a {
+  padding: 0.6mm 3mm;
+  border: 1px solid var(--print-accent);
+  border-radius: 999px;
+  color: var(--print-accent);
+  font-size: 9pt;
+  font-weight: 600;
+}
+
+.print-block,
+.print .project-card__block {
+  margin-bottom: 5mm;
+}
+
+.print-block__title,
+.print .project-card__block-title {
+  font-size: 8pt;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--print-faint);
+  margin-bottom: 2mm;
+}
+
+.print-roles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(52mm, 1fr));
+  gap: 4mm 6mm;
+}
+
+.print-roles__group {
+  break-inside: avoid;
+}
+
+.print-roles__category {
+  font-weight: 700;
+  margin-bottom: 1mm;
+}
+
+/* Images */
+.print-subgroup + .print-subgroup {
+  margin-top: 4mm;
+}
+
+.print-subgroup__title {
+  font-size: 9pt;
+  font-weight: 600;
+  color: var(--print-muted);
+  margin-bottom: 2mm;
+}
+
+.print-images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4mm;
+}
+
+.print-images__item {
+  margin: 0;
+  break-inside: avoid;
+}
+
+.print-images__item img {
+  display: block;
+  border: 1px solid var(--print-line);
+  border-radius: 2mm;
+  object-fit: contain;
+  background: #ffffff;
+}
+
+.print-images__item figcaption {
+  margin-top: 1.5mm;
+  font-size: 8pt;
+  color: var(--print-faint);
+}
+
+/* Product screens: one row at a shared height so phone and web shots line up. */
+.print-images--screens .print-images__item img {
+  height: 62mm;
+  width: auto;
+  max-width: 180mm;
+}
+
+.print-images--artifacts .print-images__item {
+  width: calc((100% - 4mm) / 2);
+}
+
+.print-images--ops .print-images__item {
+  width: calc((100% - 8mm) / 3);
+}
+
+.print-images--artifacts .print-images__item img,
+.print-images--ops .print-images__item img {
+  width: 100%;
+  height: auto;
+  max-height: 110mm;
+}
+
+.print-images--wide .print-images__item {
+  width: 100%;
+}
+
+.print-images--wide .print-images__item img {
+  width: 100%;
+  height: auto;
+  max-height: 110mm;
+}
