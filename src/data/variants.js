@@ -51,33 +51,37 @@ const mergeUserAcquisition = (base) => {
   };
 };
 
-const variants = {
-  "ypbooks-17021f": {
-    company: "영풍문고",
-    projects: [
-      "bside-app-launch",
-      "pipegallery-renewal",
-      "selvas-accuniq-cloud",
-      "selvas-carenow-3",
-      "selvas-born-this-way",
-    ],
-    display: { goal: true, roleHeading: true, contribution: true },
-    overrides: {
-      "bside-app-launch": mergeUserAcquisition,
-      "pipegallery-renewal": (base) => ({
-        ...base,
-        outcome: [
-          "요구사항 분석부터 기획·디자인·개발·배포까지 주도해 기존 cafe24 사이트를 자체 시스템으로 완전 대체, 현재 운영 중",
-          "관리자 CRUD 구축으로 전시·작가·작품 3종 콘텐츠를 갤러리 직원이 직접 생성·편집·삭제하도록 운영 구조 전환",
-          "생성형 AI(Claude Code)를 활용해 비개발 직군으로서 프론트엔드를 직접 구현·배포까지 완료",
-        ],
-      }),
-      "selvas-born-this-way": (base) => ({
-        ...base,
-        outcome: "챌린지 메뉴·레벨 정책 등 일부 기능 기획을 담당해 앱 정식 론칭에 기여",
-      }),
-    },
+// 기여도·목표를 포함한 주요 프로젝트 5개 버전 (기업 구분 없이 공용으로 제출)
+const contributionVariant = {
+  projects: [
+    "bside-app-launch",
+    "pipegallery-renewal",
+    "selvas-accuniq-cloud",
+    "selvas-carenow-3",
+    "selvas-born-this-way",
+  ],
+  display: { goal: true, roleHeading: true, contribution: true },
+  overrides: {
+    "bside-app-launch": mergeUserAcquisition,
+    "pipegallery-renewal": (base) => ({
+      ...base,
+      outcome: [
+        "요구사항 분석부터 기획·디자인·개발·배포까지 주도해 기존 cafe24 사이트를 자체 시스템으로 완전 대체, 현재 운영 중",
+        "관리자 CRUD 구축으로 전시·작가·작품 3종 콘텐츠를 갤러리 직원이 직접 생성·편집·삭제하도록 운영 구조 전환",
+        "생성형 AI(Claude Code)를 활용해 비개발 직군으로서 프론트엔드를 직접 구현·배포까지 완료",
+      ],
+    }),
+    "selvas-born-this-way": (base) => ({
+      ...base,
+      outcome: "챌린지 메뉴·레벨 정책 등 일부 기능 기획을 담당해 앱 정식 론칭에 기여",
+    }),
   },
+};
+
+const variants = {
+  "c2f5aa": contributionVariant,
+  // 영풍문고에 이미 제출한 링크 — 계속 열리도록 유지
+  "ypbooks-17021f": contributionVariant,
 };
 
 const VARIANT_PATH = /^\/p\/([^/]+)\/?$/;
